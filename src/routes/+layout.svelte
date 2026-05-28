@@ -1,33 +1,37 @@
 <script>
-	import '../app.css';
-	import favicon from '$lib/assets/favicon.svg';
-	import Header from '../lib/components/Header.svelte'
-  	import Footer from '../lib/components/Footer.svelte';
+  import '$lib/../styles/global.css';
+  import Header from '$lib/components/Header.svelte';
+  import Footer from '$lib/components/Footer.svelte';
 
-	let y;
-	let innerHeight = 0
-	let innerWidth = 0
+  let { children } = $props();
 
-	function goTop() {
-		document.body.scrollIntoView()
-	}
+  let scrollY = $state(0);
+  let innerHeight = $state(0);
+  let innerWidth = $state(0);
 
-	let { children } = $props();
+  function goTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 </script>
 
-<div class="relative flex flex-column max-w-1400px mx-auto w-full text-base sm: min-h-screen">
-	<div class="">
-		<button>
-			<i class="aria-label"/>
-		</button>
-	</div>
-	<Header/>
-	<Bio/>
-	
-	<slot/>
-	<Footer/>
+<svelte:window
+  bind:scrollY
+  bind:innerHeight
+  bind:innerWidth
+/>
+
+<svelte:head>
+  <link rel="icon" href="../src/lib/assets/favicon.svg" />
+</svelte:head>
+
+<div class="app-wrap">
+  <button class="go-top" onclick={goTop} aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <Header />
+
+  {@render children()}
+
+  <Footer />
 </div>
-
-<svelte:window bind:scrollY={y} bind:innerHeight bind:innerWidth
-
-{@render children()}
