@@ -34,13 +34,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Fira+Mono&family=Pixelify+Sans:wght@400..700&family=VT323&display=swap" rel="stylesheet">
 </svelte:head>
 
-<div class="app-wrap">
-  <button class="ml-auto rounded-full bg-slate-900 text-violet-400 px-3 sm:px-4 hover:bg-slate-800 cursor-pointer aspect-square grid place-items-center" aria-label="Back to top" >
-    <i class="fa-solid fa-arrow-up"></i>
-  </button>
-  <Header {scrollY} {innerHeight} />
+<div id="app-mount">
   {@render children()}
-  <Footer />
 </div>
 
-<svelte:window bind:scrollY bind:innerHeight bind:innerWidth />
+

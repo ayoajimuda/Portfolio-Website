@@ -1,0 +1,117 @@
+[
+  {
+    "id": "journey-01",
+    "year": "2026",
+    "text": "Starting my second year in university, I learnt about new technologies important to my sector and was able to able to utilise such skills to my advantages such as Linux, Backend & Database Engineering, Software Design & Implementation etc. I perform exceedingly well in my designated modules & projects assigned. I worked on the following projects to improve on my new found skills:",
+    "images": [
+      {
+        "src": "",
+        "alt": ""
+      },
+      {
+        "src": "",
+        "alt": ""
+      },
+      {
+        "src": "",
+        "alt": ""
+      },
+      {
+        "src": "",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "id": "journey-02",
+    "year": "2025",
+    "text": "My first year of University  ",
+    "images": [
+      {
+        "src": "",
+        "alt": ""
+      },
+      {
+        "src": "",
+        "alt": ""
+      },
+      {
+        "src": "",
+        "alt": ""
+      },
+      {
+        "src": "",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "id": "journey-03",
+    "year": "2024",
+    "text": "I official started my time in university in January because on a delay cause by the Home Office, ",
+    "images": [
+      {
+        "src": "",
+        "alt": ""
+      },
+      {
+        "src": "",
+        "alt": ""
+      },
+      {
+        "src": "",
+        "alt": ""
+      },
+      {
+        "src": "",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "id": "journey-04",
+    "year": "2023",
+    "text": "Moved to the UK for studying purposes. Although my integration into the country and becoming familiar with my new environment hinders me from putting my skills into practice, I was able to create different projects, and deepen my knowledge of Python by learning it different applications from Data Analysis & Visualization to basic Machine Learning applications, though I wasn't able to put into use that much ",
+    "images": [
+      {
+        "src": "",
+        "alt": ""
+      },
+      {
+        "src": "",
+        "alt": ""
+      },
+      {
+        "src": "",
+        "alt": ""
+      },
+      {
+        "src": "",
+        "alt": ""
+      }
+    ]
+  },
+  {
+    "id": "journey-05",
+    "year": "2022",
+    "text": "Having completed my high school education, I decide to take time to develop my skills in programming learning languages such as Python & Java, mastering concepts like OOP, control flow, data types etc as well as microcontroller programming with the Arduino. Additionally, I learnt how to utilize different software such as Fusion360, Visual Studio Code, JetsBrain PyCharm etc",
+    "images": [
+      {
+        "src": "",
+        "alt": ""
+      },
+      {
+        "src": "",
+        "alt": ""
+      },
+      {
+        "src": "",
+        "alt": ""
+      },
+      {
+        "src": "",
+        "alt": ""
+      }
+    ]
+  }
+]

@@ -1,0 +1,135 @@
+footer {
+  background: #0d0d0d;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  padding: 5rem 4rem 2.5rem;
+  position: relative;
+  z-index: 1;
+}
+footer .footer-top {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 2.5rem;
+}
+footer .footer-top .footer-left {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 1.2rem;
+}
+footer .footer-top .footer-avatar {
+  display: none;
+}
+footer .footer-top .footer-heading {
+  font-family: "VT323", monospace;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  color: #f0eeec;
+  font-weight: 400;
+  line-height: 1;
+}
+footer .footer-top .footer-cta-circle {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: #e03030;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-family: "Fira Mono", "Courier New", monospace;
+  font-size: 0.82rem;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  flex-shrink: 0;
+  border: none;
+  transition:
+    transform 0.25s,
+    background 0.25s;
+}
+footer .footer-top .footer-cta-circle:hover {
+  transform: scale(1.06);
+  background: #b52020;
+}
+footer .footer-email-pill {
+  display: inline-block;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 30px;
+  padding: 0.55rem 1.2rem;
+  font-family: "Fira Mono", "Courier New", monospace;
+  font-size: 0.82rem;
+  color: #f0eeec;
+  text-decoration: none;
+  margin-top: 2rem;
+  transition:
+    border-color 0.25s ease,
+    color 0.25s ease;
+}
+footer .footer-email-pill:hover {
+  border-color: #e03030;
+  color: #e03030;
+}
+footer .footer-bottom {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: start;
+  gap: 3rem;
+  margin-top: 3rem;
+}
+footer .footer-bottom .footer-tagline {
+  font-family: "Fira Mono", "Courier New", monospace;
+  font-size: 0.8rem;
+  color: #888580;
+  line-height: 1.8;
+  max-width: 340px;
+}
+footer .footer-bottom .footer-meta-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+footer .footer-bottom .footer-meta-col .footer-meta-label {
+  font-family: "Pixelify Sans", monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: #888580;
+  margin-bottom: 0.2rem;
+}
+footer .footer-bottom .footer-meta-col .footer-meta-value {
+  font-family: "Fira Mono", "Courier New", monospace;
+  font-size: 0.82rem;
+  color: #f0eeec;
+}
+footer .footer-bottom .footer-socials-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+footer .footer-bottom .footer-socials-col .footer-meta-label {
+  font-family: "Pixelify Sans", monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: #888580;
+  margin-bottom: 0.2rem;
+}
+footer .footer-bottom .footer-socials-col a {
+  font-family: "Fira Mono", "Courier New", monospace;
+  font-size: 0.82rem;
+  color: #f0eeec;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+footer .footer-bottom .footer-socials-col a:hover {
+  color: #e03030;
+}
+footer .footer-sub,
+footer .footer-btn-row,
+footer .footer-name,
+footer .footer-nav,
+footer .footer-socials {
+  display: none;
+}

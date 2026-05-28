@@ -1,0 +1,80 @@
+.journey-section {
+  padding: 6rem 0;
+}
+.journey-section .journey-heading {
+  padding: 0 4rem;
+}
+.journey-section .journey-intro {
+  max-width: 460px;
+  padding: 0 4rem;
+  margin-bottom: 4rem;
+}
+.journey-section .journey-intro p {
+  font-size: 0.85rem;
+  color: #888580;
+  line-height: 1.8;
+  font-family: "Fira Mono", "Courier New", monospace;
+}
+.journey-section .timeline-wrap-2 {
+  position: relative;
+  padding-left: 38vw;
+}
+.journey-section .timeline-wrap-2::before {
+  content: "";
+  position: absolute;
+  left: calc(38vw - 40px);
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.12);
+}
+.journey-section .timeline-wrap-2 .j-entry {
+  position: relative;
+  padding: 0 4rem 5rem;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 2rem;
+}
+.journey-section .timeline-wrap-2 .j-entry::before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: -46px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #111111;
+  border: 2px solid #e03030;
+}
+.journey-section .timeline-wrap-2 .j-entry .j-date {
+  font-family: "Pixelify Sans", monospace;
+  font-size: 1.8rem;
+  color: #888580;
+  letter-spacing: 0.04em;
+  padding-top: 0.2rem;
+}
+.journey-section .timeline-wrap-2 .j-entry .j-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.journey-section .timeline-wrap-2 .j-entry .j-content .j-text {
+  font-family: "Fira Mono", "Courier New", monospace;
+  font-size: 0.82rem;
+  color: #f0eeec;
+  line-height: 1.8;
+  max-width: 460px;
+}
+.journey-section .timeline-wrap-2 .j-entry .j-content .j-image-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.journey-section .timeline-wrap-2 .j-entry .j-content .j-image-grid .j-image {
+  width: 100%;
+  height: 140px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+  border-radius: 4px;
+}

@@ -5,8 +5,8 @@
     import Skills from '../lib/components/Skills.svelte';
     import Projects from '../lib/components/Projects.svelte';
     import Journey from '../lib/components/Journey.svelte';
-    import Contact from '../lib/components/Contact.svelte';
     import Footer from '../lib/components/Footer.svelte'
+    import '../styles/routes/home.css'
 </script>
 
 <svelte:head>
@@ -26,14 +26,16 @@
   <meta property="og:type" content="website">
 </svelte:head>
 
-<main>
+<Header />
 
+<main>
+  <Bio />
+  <Education />
+  <Skills />
+  <Projects />
+  <Journey />
 </main>
 
+<Footer />
 
-<style>
-    main {
-    display: flex;
-    flex-direction: column;
-  } 
-</style>
+

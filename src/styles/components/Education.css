@@ -1,0 +1,75 @@
+/* Education Section */
+.timeline-action {
+  padding: 6rem 4rem;
+  max-width: 2100px;
+  margin: 0 auto;
+}
+.timeline-action .timeline-wrap {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+}
+.timeline-action .timeline-wrap::before {
+  content: "";
+  position: absolute;
+  top: 30px;
+  left: 16.66%;
+  right: 16.66%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.15);
+}
+.timeline-action .timeline-wrap .t-entry {
+  position: relative;
+  padding: 3.5rem 2rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.timeline-action .timeline-wrap .t-entry::before {
+  content: "";
+  position: absolute;
+  top: 25px;
+  left: 50%;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #111111;
+  border: 2px solid #e03030;
+  transform: translateX(-50%);
+  box-shadow: 0 0 10px #e03030;
+  z-index: 1;
+}
+.timeline-action .timeline-wrap .t-entry img {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  -o-object-fit: contain;
+  object-fit: contain;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  margin-bottom: 1rem;
+}
+.timeline-action .timeline-wrap .t-entry .t-date {
+  font-size: large;
+  margin-bottom: 0.4rem;
+}
+.timeline-action .timeline-wrap .t-entry .t-title {
+  font-family: "Fira Mono", monospace;
+  font-size: 1.5rem;
+  letter-spacing: 0.1em;
+  color: #f0eeec;
+  margin-bottom: 0.3rem;
+}
+.timeline-action .timeline-wrap .t-entry .t-org {
+  font-size: 1rem;
+  color: #888580;
+  margin-bottom: 0.5rem;
+}
+.timeline-action .timeline-wrap .t-entry .t-desc {
+  font-size: 1rem;
+  color: #888580;
+  max-width: 260px;
+}
