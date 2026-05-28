@@ -26,18 +26,10 @@
   <meta property="og:type" content="website">
 </svelte:head>
 
-<Header/>
-
 <main>
-    <Bio/>
-    <Education/>
-    <Skills/>
-    <Projects/>
-    <Journey/>
-    <Contact/>
+
 </main>
 
-<Footer/>
 
 <style>
     main {

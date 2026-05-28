@@ -1,0 +1,109 @@
+/* Header & Nav Bar*/
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  padding: 1.6rem 3rem;
+  background: #0a0a0a;
+  backdrop-filter: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+header .logo-text {
+  font-family: "Pixelify Sans", monospace;
+  font-size: 1.5rem;
+  color: #ffffff;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+header .logo-text .logo-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  background: #ffffff;
+  color: #0a0a0a;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 2px;
+}
+
+header .logo-text .logo-dot {
+  color: #e03030;
+}
+
+/* NAV — centered & spaced out */
+header nav {
+  position: static;        /* remove absolute */
+  transform: none;         /* remove translateX */
+  margin: 0 auto; 
+}
+
+header nav ul {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-template-rows: repeat(2, auto);
+  column-gap: 30.5rem;
+  row-gap: 0.3rem;
+  list-style: none;
+  align-items: center;
+  justify-items: start;
+}
+
+header nav ul li a {
+  font-family: "Fira Mono", "Courier New", monospace;
+  font-size: 1.1em;
+  font-weight: 900;
+  color: #cccccc;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: color 0.25s ease;
+  position: relative;
+  white-space: nowrap;
+}
+
+header nav ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #111111;
+  transition: width 0.25s ease;
+}
+
+header nav ul li a:hover,
+header nav ul li a.active {
+  color: #e03030;
+}
+
+header nav ul li a:hover::after,
+header nav ul li a.active::after {
+  width: 100%;
+}
+
+/* Contact link - far right with arrow */
+header .contact-link {
+  font-family: "Fira Mono", "Courier New", monospace;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+header .contact-link:hover {
+  color: #e03030;
+}
