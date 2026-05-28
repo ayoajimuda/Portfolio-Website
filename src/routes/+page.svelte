@@ -1,12 +1,12 @@
 <script>
-    import Header from '../components/Header.svelte';
-    import Bio from '../components/Bio.svelte'
-    import Education from '../components/Education.svelte';
-    import Skills from '../components/Skills.svelte';
-    import Projects from '../components/Projects.svelte';
-    import Journey from '../components/Journey.svelte';
-    import Contact from '../components/Contact.svelte';
-    import Footer from '../components/Footer.svelte'
+    import Header from '../lib/components/Header.svelte';
+    import Bio from '../lib/components/Bio.svelte'
+    import Education from '../lib/components/Education.svelte';
+    import Skills from '../lib/components/Skills.svelte';
+    import Projects from '../lib/components/Projects.svelte';
+    import Journey from '../lib/components/Journey.svelte';
+    import Contact from '../lib/components/Contact.svelte';
+    import Footer from '../lib/components/Footer.svelte'
 </script>
 
 <svelte:head>
