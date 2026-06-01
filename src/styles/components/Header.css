@@ -1,6 +1,6 @@
 /* Header & Nav Bar*/
 header {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
@@ -11,7 +11,6 @@ header {
   justify-content: space-between;
   padding: 1.6rem 3rem;
   backdrop-filter: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 header .logo-text {
@@ -41,10 +40,9 @@ header .logo-text .logo-dot {
   color: #e03030;
 }
 
-/* NAV — centered & spaced out */
 header nav {
-  position: static;        /* remove absolute */
-  transform: none;         /* remove translateX */
+  position: static;        
+  transform: none;         
   margin: 0 auto; 
 }
 
@@ -92,7 +90,6 @@ header nav ul li a.active::after {
   width: 100%;
 }
 
-/* Contact link - far right with arrow */
 header .contact-link {
   font-family: "Fira Mono", "Courier New", monospace;
   font-size: 1rem;
