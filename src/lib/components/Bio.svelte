@@ -8,7 +8,7 @@
         <div>
           <p class="hero-subtitle">Aspiring Software Engineer</p>
           <h1 class="hero-hello">Hello I'm</h1>
-          <h1 class="hero-name">Ayomide<br>Ajimuda</h1>
+          <h1 class="hero-name">Ayomide<br>Ajimuda<br> Akinkunmi</h1>
           <p class="hero-description">IT Specialist &amp; Full-Stack Developer | Pragmatic,<br>
             delivery-oriented | Birmingham City University | UK</p>
           <div class="hero-actions">
@@ -41,7 +41,7 @@
           <div class="hero-avatar-ring">
             <div class="hero-dashes"></div>
             <div class="hero-avatar-inner">
-              <img src="..\static\assets\img\your-photo.png" alt="Ayomide Ajimuda">
+              <img src="../src/lib/assets/img.your-photo.png" alt="Ayomide Ajimuda">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" aria-hidden="true">
                 <ellipse cx="60" cy="72" rx="28" ry="20" fill="#1a1a1a" />
                 <circle cx="60" cy="48" r="22" fill="#f0e8d8" />

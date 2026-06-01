@@ -1,5 +1,6 @@
 /* Header & Nav Bar*/
 header {
+  background-color: #0a0a0a;
   position: absolute;
   top: 0;
   left: 0;
@@ -15,7 +16,7 @@ header {
 
 header .logo-text {
   font-family: "Pixelify Sans", monospace;
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   color: #ffffff;
   letter-spacing: 0.05em;
   display: flex;
@@ -31,13 +32,14 @@ header .logo-text .logo-icon {
   height: 2.2rem;
   background: #ffffff;
   color: #0a0a0a;
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   font-weight: bold;
   border-radius: 2px;
 }
 
 header .logo-text .logo-dot {
   color: #e03030;
+  font-size: 2rem;
 }
 
 header nav {
@@ -59,9 +61,9 @@ header nav ul {
 
 header nav ul li a {
   font-family: "Fira Mono", "Courier New", monospace;
-  font-size: 1.1em;
+  font-size: 1.2em;
   font-weight: 900;
-  color: #cccccc;
+  color: white;
   text-decoration: none;
   letter-spacing: 0.04em;
   transition: color 0.25s ease;
@@ -92,7 +94,7 @@ header nav ul li a.active::after {
 
 header .contact-link {
   font-family: "Fira Mono", "Courier New", monospace;
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 700;
   color: #ffffff;
   text-decoration: none;
@@ -102,4 +104,8 @@ header .contact-link {
 
 header .contact-link:hover {
   color: #e03030;
+}
+
+@media (min-width:100px) and (max-width:800px) {
+  
 }

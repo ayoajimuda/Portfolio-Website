@@ -3,6 +3,7 @@ footer {
   position: relative;
   z-index: 1;
 }
+
 footer .footer-top {
   display: flex;
   align-items: center;
@@ -12,15 +13,18 @@ footer .footer-top {
   padding-bottom: 3rem;
   margin-bottom: 2.5rem;
 }
+
 footer .footer-top .footer-left {
   display: flex;
   align-items: center;
   flex-wrap: nowrap;
   gap: 1.2rem;
 }
+
 footer .footer-top .footer-avatar {
   display: none;
 }
+
 footer .footer-top .footer-heading {
   font-family: "VT323", monospace;
   font-size: clamp(2rem, 5vw, 3.5rem);
@@ -28,6 +32,7 @@ footer .footer-top .footer-heading {
   font-weight: 400;
   line-height: 1;
 }
+
 footer .footer-top .footer-cta-circle {
   width: 140px;
   height: 140px;
@@ -48,10 +53,12 @@ footer .footer-top .footer-cta-circle {
     transform 0.25s,
     background 0.25s;
 }
+
 footer .footer-top .footer-cta-circle:hover {
   transform: scale(1.06);
   background: #b52020;
 }
+
 footer .footer-email-pill {
   display: inline-block;
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -66,10 +73,12 @@ footer .footer-email-pill {
     border-color 0.25s ease,
     color 0.25s ease;
 }
+
 footer .footer-email-pill:hover {
   border-color: #e03030;
   color: #e03030;
 }
+
 footer .footer-bottom {
   display: grid;
   grid-template-columns: 1fr auto auto;
@@ -77,6 +86,7 @@ footer .footer-bottom {
   gap: 3rem;
   margin-top: 3rem;
 }
+
 footer .footer-bottom .footer-tagline {
   font-family: "Fira Mono", "Courier New", monospace;
   font-size: 0.8rem;
@@ -84,11 +94,13 @@ footer .footer-bottom .footer-tagline {
   line-height: 1.8;
   max-width: 340px;
 }
+
 footer .footer-bottom .footer-meta-col {
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
 }
+
 footer .footer-bottom .footer-meta-col .footer-meta-label {
   font-family: "Pixelify Sans", monospace;
   font-size: 0.75rem;
@@ -96,16 +108,19 @@ footer .footer-bottom .footer-meta-col .footer-meta-label {
   color: #888580;
   margin-bottom: 0.2rem;
 }
+
 footer .footer-bottom .footer-meta-col .footer-meta-value {
   font-family: "Fira Mono", "Courier New", monospace;
   font-size: 0.82rem;
   color: #f0eeec;
 }
+
 footer .footer-bottom .footer-socials-col {
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
 }
+
 footer .footer-bottom .footer-socials-col .footer-meta-label {
   font-family: "Pixelify Sans", monospace;
   font-size: 0.75rem;
@@ -113,6 +128,7 @@ footer .footer-bottom .footer-socials-col .footer-meta-label {
   color: #888580;
   margin-bottom: 0.2rem;
 }
+
 footer .footer-bottom .footer-socials-col a {
   font-family: "Fira Mono", "Courier New", monospace;
   font-size: 0.82rem;
@@ -120,9 +136,11 @@ footer .footer-bottom .footer-socials-col a {
   text-decoration: none;
   transition: color 0.25s ease;
 }
+
 footer .footer-bottom .footer-socials-col a:hover {
   color: #e03030;
 }
+
 footer .footer-sub,
 footer .footer-btn-row,
 footer .footer-name,

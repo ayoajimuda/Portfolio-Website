@@ -39,7 +39,7 @@
 <!-- Fixed full-screen background layer -->
 <div class="background-layer">
   <FallingPattern
-    color="#ff2020"
+    color="#FF2E2E"
     backgroundColor="var(--background, #0a0a0a)"
     duration={80}
     blurIntensity="0.5rem"

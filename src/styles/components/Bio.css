@@ -12,11 +12,13 @@
   font-size: 12px;
   color: #888;
   margin-bottom: 12px;
+  line-height: 1.8;
+  margin-bottom: 14px;
   letter-spacing: 0.08em;
 }
 
 .hero-wrap .hero-hello {
-  font-size: 55px;
+  font-size: 65px;
   font-weight: 700;
   color: #fff;
   margin: 0 0 4px;
@@ -25,27 +27,24 @@
 
 .hero-wrap .hero-name {
   font-size: 75px;
-  font-weight: 700;
+  font-weight: 600;
   color: #e03030;
   margin: 0 0 20px;
   line-height: 1.1;
 }
 
-.hero-wrap .hero-sub {
-  font-size: 14px;
-  color: #888;
-  line-height: 1.8;
-  margin-bottom: 14px;
-}
-
 .hero-wrap .hero-actions {
   display: flex;
   align-items: center;
-  gap: 14px;
-  padding-top: 5px;
+  gap: 30px;
+  padding-top: 25px;
 }
 
-/* Hero Buttons */
+.hero-wrap .hero-description {
+  font-size: 18px;
+  font-weight: 200;
+}
+
 .hero-wrap .hero-cv-btn {
   border: 1.5px solid #e03030;
   color: #e03030;
@@ -66,14 +65,14 @@
 
 .hero-wrap .hero-actions .social-links {
   display: flex;
-  gap: 10px;
+  gap: 20px;
 }
 
 .hero-wrap .hero-actions .hero-social-icon {
-  width: 42px;
-  height: 42px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
-  border: 1.5px solid #2a2d3e;
+  border: 1.75px solid #2a2d3e;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -92,7 +91,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding-right: 200px; 
+  padding-right: 180px; 
 }
 
 .hero-avatar-wrap .hero-avatar-ring {
@@ -108,7 +107,7 @@
 }
 
 .hero-avatar-wrap .hero-avatar-inner {
-  width: 352x;
+  width: 352px;
   height: 352px;
   border-radius: 50%;
   background: #f5f5f0;
@@ -163,7 +162,7 @@
 }
 
 .info-row .hero-stat-num {
-  font-size: 52px;
+  font-size: 60px;
   font-weight: 700;
   color: #fff;
   line-height: 1;
@@ -171,11 +170,46 @@
 
 .info-row .hero-stat-lbl,
 .info-row .stat-lbl {
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 500;
   color: #888;
   line-height: 1.4;
   max-width: 100px;
 }
 
-
+@media (min-width:100px) and (max-width:800px) {
+  .hero-wrap {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding-left: 90px;
+  }
+ 
+  .hero-wrap .hero-actions {
+    justify-content: center;
+    padding-right: 50px;
+  }
+ 
+  .hero-wrap .hero-actions .social-links {
+    justify-content: center;
+  }
+ 
+  .hero-avatar-wrap {
+    justify-content: center;
+    padding-right: 0;
+    order: -1;
+  }
+ 
+  .info-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(1rem, 3vw, 1.5rem);
+  }
+ 
+  .info-row .hero-stat {
+    padding-right: 0;
+    border-right: none;
+    flex-direction: column;
+    gap: 4px;
+    text-align: center;
+    padding-right: 0;
+  }
+}

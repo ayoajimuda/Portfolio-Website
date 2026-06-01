@@ -127,28 +127,28 @@
 }
 
 /* ── Mobile: stack back to single column ── */
-@media (max-width: 700px) {
+@media (min-width:100px) and (max-width:800px) {
   .journey-section .timeline-wrap-2::before {
-    left: 20px;
+    left: 50px;
   }
   .journey-section .timeline-wrap-2 .j-entry {
     grid-template-columns: 1fr;
     padding-left: 3rem;
   }
   .journey-section .timeline-wrap-2 .j-entry::before {
-    left: 20px;
+    left: 10px;
     transform: none;
   }
   .journey-section .timeline-wrap-2 .j-entry:nth-child(odd) .j-date,
   .journey-section .timeline-wrap-2 .j-entry:nth-child(even) .j-date {
     text-align: left;
-    padding: 0;
+    padding-left: 10px;
     order: 1;
   }
   .journey-section .timeline-wrap-2 .j-entry:nth-child(odd) .j-content,
   .journey-section .timeline-wrap-2 .j-entry:nth-child(even) .j-content {
     text-align: left;
-    padding: 0;
+    padding-left: 10px;
     order: 2;
   }
   .journey-section .timeline-wrap-2 .j-entry:nth-child(even) .j-content .j-text,

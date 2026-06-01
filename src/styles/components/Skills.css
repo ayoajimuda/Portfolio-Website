@@ -1,6 +1,6 @@
 /* Skills Section */
 .skills-section {
-  padding: 6rem 2rem;
+  padding: 1rem 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,14 +14,13 @@
   max-width: 1400px;
 }
 
-/* Category cards */
 .skill-category-card {
   border-radius: 12px;
   padding: 32px 28px 36px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  background: #1a1a1a;
+  background: #161616;
   min-height: 400px; /* adjust this value to taste */
   justify-content: flex-start;
 }
@@ -80,13 +79,15 @@
 .skill-item img.no-tint {
   filter: none;
 }
+
 /* Responsive */
-@media (max-width: 900px) {
+@media (min-width:100px) and (max-width:900px) {
   .skills-cards-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
+/* Responsive */
 @media (max-width: 500px) {
   .skills-cards-grid {
     grid-template-columns: 1fr;
