@@ -2,6 +2,12 @@
   padding: 6rem 0;
 }
 .journey-section .journey-heading {
+  font-family: "Pixelify Sans", monospace;
+  font-size: 3.5rem;
+  letter-spacing: 0.3em;
+  color: #f0eeec;
+  text-align: center;
+  margin-bottom: 3rem;
   padding: 0 4rem;
 }
 .journey-section .journey-intro {
@@ -78,3 +84,4 @@
   display: block;
   border-radius: 4px;
 }
+

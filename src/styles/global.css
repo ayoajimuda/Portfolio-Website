@@ -72,9 +72,7 @@ section,
   z-index: 1;
 }
 
-.section-heading,
-.projects-heading,
-.journey-heading {
+.section-heading {
   font-family: "Pixelify Sans", monospace;
   font-size: 3.5rem;
   letter-spacing: 0.3em;
@@ -83,15 +81,13 @@ section,
   margin-bottom: 3rem;
 }
 
-/* Fixed full-viewport background behind everything */
 .background-layer {
   position: fixed;
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  /* no mask-image — pattern covers the full viewport */
 }
-/* Scrollable content sits above the fixed background */
+
 #app-mount {
   position: relative;
   z-index: 1;

@@ -1,11 +1,10 @@
-/*Hero Section of the Page*/
 .hero-wrap {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
   padding: 52px 32px 40px;
   padding-top: 150px;
-  padding-left: 400px;
+  padding-left: 200px;
   gap: 32px;
 }
 
@@ -89,12 +88,11 @@
   color: #e03030;
 }
 
-/* Hero Image */
 .hero-avatar-wrap {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding-right: 300px; /* mirrors the left indent for balance */
+  padding-right: 200px; 
 }
 
 .hero-avatar-wrap .hero-avatar-ring {
@@ -142,7 +140,6 @@
   pointer-events: none;
 }
 
-/* Info Row Section*/
 .info-row {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
