@@ -1,0 +1,15 @@
+/* ── Tailwind v4 ── */
+@import "tailwindcss";
+
+/* ── Global custom properties ── */
+@theme {
+  --color-brand:      #d42b2b;
+  --color-bg:         #111111;
+  --color-surface:    #1a1a1a;
+  --color-border:     #333333;
+  --color-muted:      #888580;
+  --color-text:       #f0eeec;
+  --font-mono:        'Fira Mono', 'Courier New', monospace;
+  --font-pixel:       'VT323', monospace;
+  --font-pixel-sans:  'Pixelify Sans', monospace;
+}
