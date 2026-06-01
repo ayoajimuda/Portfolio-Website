@@ -10,7 +10,6 @@ header {
   flex-wrap: nowrap;
   justify-content: space-between;
   padding: 1.6rem 3rem;
-  background: #0a0a0a;
   backdrop-filter: none;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
