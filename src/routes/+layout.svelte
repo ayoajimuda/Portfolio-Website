@@ -54,7 +54,8 @@
   />
 </svelte:head>
 
-<!-- Fixed full-screen background layer -->
+<svelte:body/>
+
 <div class="background-layer">
   <FallingPattern
     color="#FF2E2E"
@@ -111,7 +112,5 @@
     flex-direction: column;
   }
 
-  main {
-    flex: 1;
-  }
+
 </style>
