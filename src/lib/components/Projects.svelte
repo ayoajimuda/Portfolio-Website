@@ -1,7 +1,11 @@
 <script>
-  import { onMount } from 'svelte';
-  import { pickRandomProjects, scrollToCard, getClosestCardIndex } from '../data/projects.js';
-  import '../../styles/components/Projects.css';
+  import { onMount } from "svelte";
+  import {
+    pickRandomProjects,
+    scrollToCard,
+    getClosestCardIndex,
+  } from "../data/projects.js";
+  import "../../styles/components/Projects.css";
 
   // ── State ──────────────────────────────────────────────────────────────────
   let slideEl = $state(null);
@@ -10,8 +14,8 @@
 
   // ── Video modal state ──────────────────────────────────────────────────────
   let showModal = $state(false);
-  let modalVideoSrc = $state('');
-  let modalTitle = $state('');
+  let modalVideoSrc = $state("");
+  let modalTitle = $state("");
 
   function openModal(src, title) {
     modalVideoSrc = src;
@@ -21,8 +25,8 @@
 
   function closeModal() {
     showModal = false;
-    modalVideoSrc = '';
-    modalTitle = '';
+    modalVideoSrc = "";
+    modalTitle = "";
   }
 
   // ── Pagination handlers ────────────────────────────────────────────────────
@@ -44,16 +48,33 @@
 <!-- ── Projects section ──────────────────────────────────────────────────── -->
 
 <section class="projects" id="projets">
-  <p class="projects-title">Personal Experiments</p>
+  <p class="projects-title">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="58"
+      height="58"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+    >
+      <path
+        d="m6 14 1.5-2.9A2 2 0 0 1 9.24 10H20a2 2 0 0 1 1.94 2.5l-1.54 6a2 2 0 0 1-1.95 1.5H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H18a2 2 0 0 1 2 2v2"
+      />
+    </svg>
+    My Works
+  </p>
 
   <!-- Horizontal scrollable card strip -->
   <div class="projects-slide" bind:this={slideEl} onscroll={handleScroll}>
     {#each selectedProjects as proj (proj.id)}
       <div class="projects-card">
-
         <!-- Icon buttons (visually hoisted to the top via order: -1 in CSS) -->
         <div class="projects-links">
-          {#if proj.links?.demo && proj.links.demo !== '#'}
+          {#if proj.links?.demo && proj.links.demo !== "#"}
             <a
               class="projects-link-btn"
               href={proj.links.demo}
@@ -101,7 +122,6 @@
             <p>{proj.description}</p>
           </div>
         </div>
-
       </div>
     {/each}
   </div>
@@ -117,7 +137,8 @@
         aria-selected={i === activeIndex}
         tabindex="0"
         onclick={() => handleScrollToCard(i)}
-        onkeydown={(e) => (e.key === 'Enter' || e.key === ' ') && handleScrollToCard(i)}
+        onkeydown={(e) =>
+          (e.key === "Enter" || e.key === " ") && handleScrollToCard(i)}
       ></div>
     {/each}
   </div>
@@ -138,8 +159,10 @@
     role="dialog"
     aria-modal="true"
     aria-label="Video demo: {modalTitle}"
-    onclick={(e) => { if (e.target === e.currentTarget) closeModal(); }}
-    onkeydown={(e) => e.key === 'Escape' && closeModal()}
+    onclick={(e) => {
+      if (e.target === e.currentTarget) closeModal();
+    }}
+    onkeydown={(e) => e.key === "Escape" && closeModal()}
     tabindex="-1"
   >
     <div class="modal-content">
