@@ -1,5 +1,6 @@
 <script>
   import "../app.css";
+  import "../reset.css"
   import "../styles/routes/layout.css";
   import "../styles/global.css";
   import FallingPattern from "../lib/components/FallingPattern.svelte";
