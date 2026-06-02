@@ -3,13 +3,30 @@
 
 /* ── Global custom properties ── */
 @theme {
-  --color-brand:      #d42b2b;
-  --color-bg:         #111111;
-  --color-surface:    #1a1a1a;
-  --color-border:     #333333;
-  --color-muted:      #888580;
-  --color-text:       #f0eeec;
-  --font-mono:        'Fira Mono', 'Courier New', monospace;
-  --font-pixel:       'VT323', monospace;
-  --font-pixel-sans:  'Pixelify Sans', monospace;
+  --max-width: 800px;
+  --gutter-inline: clamp(16px, 4vw, 40px);
+  --section-gap: 3rem;
+  --accent-red: #ff5656;
+  --accent-green: #00ff26;
+  --border-color: #fff;
+  --border-color2: #000;
+  --border-color3: #333;
+  --bg-color: #fffced;
+  --bg-color2: #fff;
+  --bg-color3: #000;
+  --bg-color4: #333;
+  --text-color: #fff;
+  --text-color2: #000;
+  --color-brand: #d42b2b;
+  --color-bg: #111111;
+  --color-surface: #1a1a1a;
+  --color-border: #333333;
+  --color-muted: #888580;
+  --color-text: #f0eeec;
+  --font-mono: "Fira Mono", "Courier New", monospace;
+  --font-pixel: "VT323", monospace;
+  --font-pixel-sans: "Pixelify Sans", monospace;
+  --font-family: "Inter", sans-serif;
+  --fontTerminal: "Courier New", monospace;
+  --background: #000000;
 }

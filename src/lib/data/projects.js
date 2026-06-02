@@ -1,85 +1,50 @@
-// ── Constants ──────────────────────────────────────────────────────────────
-export const CARDS_PER_VIEW = 3; // how many cards are visible at once
-
-// ── Data loading ───────────────────────────────────────────────────────────
-export async function loadProjects(path = 'projects.json') {
-  const res = await fetch(path);
-  if (!res.ok) throw new Error(`Failed to fetch projects: ${res.status}`);
-  return res.json();
-}
-
-// ── Navigation ─────────────────────────────────────────────────────────────
-export function clampIndex(index, totalSlides) {
-  return Math.max(0, Math.min(index, totalSlides - 1));
-}
-
-export function getTotalSlides(projectCount, cardsPerView) {
-  return Math.max(0, projectCount - cardsPerView + 1);
-}
-
-export function navigateTo(index, totalSlides) {
-  return clampIndex(index, totalSlides);
-}
-
-// ── Scrollbar geometry ─────────────────────────────────────────────────────
-export function getThumbWidthPct(totalSlides) {
-  return totalSlides > 1 ? (1 / totalSlides) * 100 : 100;
-}
-
-export function getThumbOffsetPct(clampedIndex, totalSlides, thumbWidthPct) {
-  return totalSlides > 1
-    ? (clampedIndex / (totalSlides - 1)) * (100 - thumbWidthPct)
-    : 0;
-}
-
-// ── Track translate ────────────────────────────────────────────────────────
-export function getTranslatePct(clampedIndex, cardsPerView) {
-  return clampedIndex * (100 / cardsPerView);
-}
-
-// ── Scrollbar drag ─────────────────────────────────────────────────────────
+import { onMount } from 'svelte';
+import projectsData from '$lib/data/projects.json';
 
 /**
- * Call on pointerdown. Returns initial drag state.
- * @param {PointerEvent} e
- * @param {number} clampedIndex
- * @returns {{ isDragging: boolean, dragStartX: number, dragStartIndex: number }}
+ * Shuffles and returns 4 random projects from the data.
+ * Call this inside onMount in the component.
+ * @returns {any[]}
  */
-export function startDrag(e, clampedIndex) {
-  e.currentTarget.setPointerCapture(e.pointerId);
-  return {
-    isDragging: true,
-    dragStartX: e.clientX,
-    dragStartIndex: clampedIndex,
-  };
+export function pickRandomProjects() {
+  const shuffled = [...projectsData];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled.slice(0, 4);
 }
 
 /**
- * Call on pointermove. Returns the new slide index (or current if not dragging).
- * @param {PointerEvent} e
- * @param {{ isDragging: boolean, dragStartX: number, dragStartIndex: number }} dragState
- * @param {HTMLElement} trackEl
- * @param {number} totalSlides
- * @param {number} currentIndex
- * @returns {number} new index
+ * Scrolls the slide container to the card at the given index.
+ * @param {HTMLElement} slideEl
+ * @param {number} index
  */
-export function moveDrag(e, dragState, trackEl, totalSlides, currentIndex) {
-  if (!dragState.isDragging || !trackEl) return currentIndex;
-
-  const trackW = trackEl.offsetWidth;
-  const thumbW = trackW / Math.max(totalSlides, 1);
-  const delta = e.clientX - dragState.dragStartX;
-  const slidesMoved = Math.round((delta / (trackW - thumbW)) * (totalSlides - 1));
-
-  return clampIndex(dragState.dragStartIndex + slidesMoved, totalSlides);
+export function scrollToCard(slideEl, index) {
+  if (!slideEl) return;
+  const cards = [...slideEl.querySelectorAll('.projects-card')];
+  if (cards[index]) {
+    cards[index].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+  }
 }
 
 /**
- * Call on pointerup / pointercancel. Returns reset drag state.
- * @param {PointerEvent} e
- * @returns {{ isDragging: boolean }}
+ * Returns the index of the card whose left edge is closest to the container's left edge.
+ * @param {HTMLElement} slideEl
+ * @returns {number}
  */
-export function endDrag(e) {
-  e.currentTarget.releasePointerCapture(e.pointerId);
-  return { isDragging: false };
+export function getClosestCardIndex(slideEl) {
+  if (!slideEl) return 0;
+  const containerLeft = slideEl.getBoundingClientRect().left;
+  const cards = [...slideEl.querySelectorAll('.projects-card')];
+  let closestIndex = 0;
+  let minDiff = Infinity;
+  cards.forEach((card, i) => {
+    const diff = Math.abs(card.getBoundingClientRect().left - containerLeft);
+    if (diff < minDiff) {
+      minDiff = diff;
+      closestIndex = i;
+    }
+  });
+  return closestIndex;
 }

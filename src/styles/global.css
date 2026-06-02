@@ -12,6 +12,7 @@ html {
   scroll-behavior: smooth;
   font-size: 16px;
   overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 body {
@@ -22,8 +23,18 @@ body {
     "Pixelify Sans" monospace;
   font-size: 15px;
   line-height: 1.6;
+  overflow-x: auto;
   margin: 0;
   background-color: var(--background, #0a0a0a);
+  background-size: cover;
+  background-attachment: fixed;
+  color: #222;
+  cursor: url("https://cdn.prod.website-files.com/6708f85ff3d3cba6aff436fb/671251b239d7aeb290a31ac5_cursor-default%402x.svg") 2 0, auto
+}
+
+body a,
+body button{
+  cursor: url("https://cdn.prod.website-files.com/6708f85ff3d3cba6aff436fb/671251b212e6b71494aa67ff_cursor-pointer%402x.svg") 2, 0, pointer;
 }
 
 :global(.mask-radial) {
@@ -37,6 +48,61 @@ body {
     transparent 0%,
     var(--background, #0a0a0a) 80%
   );
+}
+
+.modal {
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 1.5rem 1rem 1rem 1rem;
+    border-radius: 12px;
+    position: relative;
+    min-width: 320px;
+    max-width: 96vw;
+    box-shadow: 0 8px 40px #0006;
+    animation: popup 0.25s cubic-bezier(.68, -0.55, .27, 1.55);
+}
+
+@keyframes popup {
+    0% {
+        transform: scale(0.7);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.close-modal {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+    font-size: 2rem;
+    color: #333;
+    cursor: pointer;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+.close-modal:hover {
+    color: #f00;
+}
+
+#modal-title {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    text-align: center;
 }
 
 .content-layer {
