@@ -1,28 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Mono&family=Pixelify+Sans:wght@400..700&family=VT323&display=swap');
 
-.timeline-action .timeline-wrap .t-entry .t-date {
-  font-family: "Fira Mono", "Courier New", monospace;
-  font-size: 0.75rem;
-  letter-spacing: 0.08em;
-  color: #e11717;
-}
-
-.journey-section
-  .timeline-wrap-2
-  .j-entry
-  .j-content
-  .j-image-grid
-  .j-image:not([src]),
-.timeline-action .timeline-wrap .t-entry img:not([src]),
-.journey-section
-  .timeline-wrap-2
-  .j-entry
-  .j-content
-  .j-image-grid
-  [src=""].j-image,
-.timeline-action .timeline-wrap .t-entry img[src=""] {
-  display: none;
-}
 
 *,
 *::before,
@@ -39,7 +16,6 @@ html {
 }
 
 body {
-  background: transparent;
   color: #f0eeec;
   font-family: "Fira Mono", "Courier New", monospace;
   font-size: 15px;
@@ -51,35 +27,6 @@ img { display: block; max-width: 100%; }
 a { color: inherit; text-decoration: none; }
 ul { list-style: none; }
 button { cursor: pointer; border: none; background: none; font: inherit; }
-
-/* Scrollbar */
-::-webkit-scrollbar {
-  width: 4px;
-}
-
-::-webkit-scrollbar-track {
-  background: #111111;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #e11717;
-  border-radius: 2px;
-}
-
-section,
-.projects-section {
-  position: relative;
-  z-index: 1;
-}
-
-.section-heading {
-  font-family: "Pixelify Sans", monospace;
-  font-size: 3.5rem;
-  letter-spacing: 0.3em;
-  color: #f0eeec;
-  text-align: center;
-  margin-bottom: 3rem;
-}
 
 .background-layer {
   position: fixed;
@@ -95,3 +42,20 @@ section,
   display: flex;
   flex-direction: column;
 }
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111111;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e11717;
+  border-radius: 2px;
+}
+
+
+

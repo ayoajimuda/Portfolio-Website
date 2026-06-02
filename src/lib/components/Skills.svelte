@@ -4,7 +4,7 @@
 </script>
 
     <section class="skills-section" id="competences">
-      <h2 class="section-heading">MY SKILLS</h2>
+      <h2 class="skills-heading">MY SKILLS</h2>
 
       <div class="skills-cards-grid">
 

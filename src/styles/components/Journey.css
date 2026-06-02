@@ -1,5 +1,24 @@
+.journey-section
+  .timeline-wrap-2
+  .j-entry
+  .j-content
+  .j-image-grid
+  .j-image:not([src]),
+.timeline-action .timeline-wrap .t-entry img:not([src]),
+.journey-section
+  .timeline-wrap-2
+  .j-entry
+  .j-content
+  .j-image-grid
+  [src=""].j-image,
+.timeline-action .timeline-wrap .t-entry img[src=""] {
+  display: none;
+}
+
 .journey-section {
   padding: 6rem 0;
+  position: relative;
+  z-index: 1;
 }
 .journey-section .journey-heading {
   font-family: "Pixelify Sans", monospace;

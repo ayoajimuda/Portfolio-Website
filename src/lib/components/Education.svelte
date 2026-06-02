@@ -5,7 +5,7 @@
 
     <!-- Education Timeline (Horizontal) -->
     <section class="timeline-action" id="timeline">
-      <h2 class="section-heading">Education</h2>
+      <h2 class="education-heading">Education</h2>
       <div class="timeline-wrap">
 
         <article class="t-entry">
