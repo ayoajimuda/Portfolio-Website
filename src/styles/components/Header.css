@@ -167,7 +167,7 @@ header .contact-link:hover {
 }
 
 /* ── Mobile ─────────────────────────────────── */
-@media (max-width: 800px) {
+@media (min-width:100px) and (max-width:1000px) {
 
   header {
     padding: 1.2rem 1.5rem;
