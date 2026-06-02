@@ -19,16 +19,14 @@ body {
   color: #f0eeec;
   font-family:
     "Fira Mono",
-    "Courier New",
-    "Pixelify Sans" monospace;
+    "Courier New", monospace;
   font-size: 15px;
   line-height: 1.6;
-  overflow-x: auto;
+  overflow-x: hidden;
   margin: 0;
   background-color: var(--background, #0a0a0a);
   background-size: cover;
   background-attachment: fixed;
-  color: #222;
   cursor: url("https://cdn.prod.website-files.com/6708f85ff3d3cba6aff436fb/671251b239d7aeb290a31ac5_cursor-default%402x.svg") 2 0, auto
 }
 
@@ -49,7 +47,6 @@ body button{
     var(--background, #0a0a0a) 80%
   );
 }
-
 
 .content-layer {
   position: relative;

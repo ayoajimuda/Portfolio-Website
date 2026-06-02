@@ -72,6 +72,7 @@
 .timeline-action .timeline-wrap .t-entry .t-date {
   font-size: x-large;
   margin-bottom: 0.4rem;
+  color: #e03030;
 }
 
 .timeline-action .timeline-wrap .t-entry .t-title {
