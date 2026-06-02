@@ -1,157 +1,162 @@
 <script>
+  import { onMount } from 'svelte';
+  import { pickRandomProjects, scrollToCard, getClosestCardIndex } from '../data/projects.js';
   import '../../styles/components/Projects.css';
-  import {
-    CARDS_PER_VIEW,
-    loadProjects,
-    getTotalSlides,
-    navigateTo,
-    getThumbWidthPct,
-    getThumbOffsetPct,
-    getTranslatePct,
-    startDrag,
-    moveDrag,
-    endDrag,
-  } from '../data/projects.js';
 
   // ── State ──────────────────────────────────────────────────────────────────
-  let projects     = $state([]);
-  let currentIndex = $state(0);
-  let dragState    = $state({ isDragging: false, dragStartX: 0, dragStartIndex: 0 });
-  let trackEl      = $state(null);
+  let slideEl = $state(null);
+  let selectedProjects = $state([]);
+  let activeIndex = $state(0);
 
-  // ── Derived ────────────────────────────────────────────────────────────────
-  let totalSlides    = $derived(getTotalSlides(projects.length, CARDS_PER_VIEW));
-  let clampedIndex   = $derived(navigateTo(currentIndex, totalSlides));
-  let thumbWidthPct  = $derived(getThumbWidthPct(totalSlides));
-  let thumbOffsetPct = $derived(getThumbOffsetPct(clampedIndex, totalSlides, thumbWidthPct));
-  let translatePct   = $derived(getTranslatePct(clampedIndex, CARDS_PER_VIEW));
+  // ── Video modal state ──────────────────────────────────────────────────────
+  let showModal = $state(false);
+  let modalVideoSrc = $state('');
+  let modalTitle = $state('');
 
-  $effect(() => {
-    loadProjects('/src/lib/data/projects.json')
-      .then(data => { projects = data; })
-      .catch(err => console.error(err));
+  function openModal(src, title) {
+    modalVideoSrc = src;
+    modalTitle = title;
+    showModal = true;
+  }
+
+  function closeModal() {
+    showModal = false;
+    modalVideoSrc = '';
+    modalTitle = '';
+  }
+
+  // ── Pagination handlers ────────────────────────────────────────────────────
+  function handleScrollToCard(index) {
+    activeIndex = index;
+    scrollToCard(slideEl, index);
+  }
+
+  function handleScroll() {
+    activeIndex = getClosestCardIndex(slideEl);
+  }
+
+  // ── Pick random projects on mount ──────────────────────────────────────────
+  onMount(() => {
+    selectedProjects = pickRandomProjects();
   });
-
-  function goTo(index) {
-    currentIndex = navigateTo(index, totalSlides);
-  }
-
-  function onThumbPointerDown(e) {
-    dragState = startDrag(e, clampedIndex);
-  }
-
-  function onThumbPointerMove(e) {
-    currentIndex = moveDrag(e, dragState, trackEl, totalSlides, currentIndex);
-  }
-
-  function onThumbPointerUp(e) {
-    dragState = endDrag(e);
-  }
 </script>
 
-<section class="projects-section" id="projects">
-  <h2 class="section-heading">Personal Experiments</h2>
+<!-- ── Projects section ──────────────────────────────────────────────────── -->
 
-  <!-- ── Carousel viewport ── -->
-  <div class="projects-viewport">
-    <div
-      class="projects-track"
-      style="transform: translateX(-{translatePct}%)"
-    >
-      {#each projects as project (project.id)}
-        <div class="projects-card">
+<section class="projects" id="projets">
+  <p class="projects-title">Personal Experiments</p>
 
-          <!-- Action buttons -->
-          <div class="projects-actions">
-            {#if project.links?.demo}
-              <a
-                class="projects-icon-btn"
-                href={project.links.demo}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Live demo"
-              >
-                <i class="fa-solid fa-arrow-up-right-from-square"></i>
-              </a>
-            {/if}
+  <!-- Horizontal scrollable card strip -->
+  <div class="projects-slide" bind:this={slideEl} onscroll={handleScroll}>
+    {#each selectedProjects as proj (proj.id)}
+      <div class="projects-card">
 
-            {#if project.links?.github}
-              <a
-                class="projects-icon-btn"
-                href={project.links.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="GitHub repository"
-              >
-                <i class="fa-brands fa-github"></i>
-              </a>
-            {/if}
-          </div>
+        <!-- Icon buttons (visually hoisted to the top via order: -1 in CSS) -->
+        <div class="projects-links">
+          {#if proj.links?.demo && proj.links.demo !== '#'}
+            <a
+              class="projects-link-btn"
+              href={proj.links.demo}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Open live demo for {proj.title}"
+            >
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          {:else if proj.video}
+            <button
+              aria-label="Watch demo video for {proj.title}"
+              onclick={() => openModal(proj.video, proj.title)}
+            >
+              <i class="fa-solid fa-play"></i>
+            </button>
+          {/if}
 
-          <!-- Preview image -->
-          <div class="projects-preview">
-            {#if project.image}
-              <img src={project.image} alt="{project.title} preview" />
-            {:else}
-              <div class="projects-preview-placeholder">
-                <i class="fa-regular fa-image"></i>
-                <span>No preview</span>
-              </div>
-            {/if}
-          </div>
-
-          <!-- Stack + description -->
-          <div class="projects-info">
-            <div class="projects-stack-col">
-              {#each project.stack as tech}
-                <span class="projects-stack-badge">{tech}</span>
-              {/each}
-            </div>
-
-            <p class="projects-desc">{project.description}</p>
-          </div>
-
+          {#if proj.links?.github}
+            <a
+              class="projects-link-btn"
+              href={proj.links.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View {proj.title} on GitHub"
+            >
+              <i class="fa-brands fa-github"></i>
+            </a>
+          {/if}
         </div>
-      {/each}
-    </div>
-  </div>
 
-  <!-- ── Custom scrollbar ── -->
-  <div class="projects-scrollbar-wrap">
-    <div class="projects-scrollbar-track" bind:this={trackEl}>
-      <div
-        class="projects-scrollbar-thumb"
-        style="width: {thumbWidthPct}%; left: {thumbOffsetPct}%"
-        role="scrollbar"
-        aria-controls="projects-track"
-        aria-valuenow={clampedIndex}
-        aria-valuemin={0}
-        aria-valuemax={totalSlides - 1}
-        aria-label="Projects carousel scrollbar"
-        tabindex="0"
-        onpointerdown={onThumbPointerDown}
-        onpointermove={onThumbPointerMove}
-        onpointerup={onThumbPointerUp}
-        onpointercancel={onThumbPointerUp}
-      ></div>
-    </div>
-  </div>
+        <!-- Screenshot / thumbnail -->
+        <div class="projects-img">
+          <img src={proj.image} alt={proj.title} />
+        </div>
 
-  <!-- ── Dot indicators ── -->
-  <div class="projects-dots">
-    {#each Array(totalSlides) as _, i}
-      <button
-        class="projects-dot {i === clampedIndex ? 'active' : ''}"
-        aria-label="Go to slide {i + 1}"
-        onclick={() => goTo(i)}
-      ></button>
+        <!-- Stack tags + description text -->
+        <div class="projects-description">
+          <div class="projects-stack">
+            {#each proj.stack as tech}
+              <p><strong>{tech}</strong></p>
+            {/each}
+          </div>
+          <div class="projects-text">
+            <p>{proj.description}</p>
+          </div>
+        </div>
+
+      </div>
     {/each}
   </div>
 
-  <!-- ── CTA ── -->
-  <div class="projects-cta-wrap">
-    <a class="projects-cta" href="./html/projects.html">
-      To see all of my projects <i class="fa-solid fa-arrow-right"></i>
-    </a>
+  <!-- Pagination cubes — hidden on mobile via CSS -->
+  <div class="pagination" role="tablist" aria-label="Project navigation">
+    {#each selectedProjects as proj, i}
+      <div
+        class="pagination-cube"
+        class:active={i === activeIndex}
+        role="tab"
+        aria-label="Go to project {i + 1}: {proj.title}"
+        aria-selected={i === activeIndex}
+        tabindex="0"
+        onclick={() => handleScrollToCard(i)}
+        onkeydown={(e) => (e.key === 'Enter' || e.key === ' ') && handleScrollToCard(i)}
+      ></div>
+    {/each}
   </div>
+
+  <!-- "See all projects" CTA -->
+  <a class="bouton-all-projects" href="/projets">
+    <p>To see all my projects</p>
+    <i class="fa-solid fa-arrow-right"></i>
+  </a>
 </section>
+
+<!-- ── Video modal ───────────────────────────────────────────────────────── -->
+{#if showModal}
+  <!-- svelte-ignore a11y_click_events_have_key_events -->
+  <!-- svelte-ignore a11y_no_static_element_interactions -->
+  <div
+    class="modal-overlay"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Video demo: {modalTitle}"
+    onclick={(e) => { if (e.target === e.currentTarget) closeModal(); }}
+    onkeydown={(e) => e.key === 'Escape' && closeModal()}
+    tabindex="-1"
+  >
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>{modalTitle}</h3>
+        <button
+          class="modal-close"
+          aria-label="Close video modal"
+          onclick={closeModal}
+        >
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <!-- svelte-ignore a11y_media_has_caption -->
+      <video src={modalVideoSrc} controls autoplay>
+        <track kind="captions" />
+      </video>
+    </div>
+  </div>
+{/if}
