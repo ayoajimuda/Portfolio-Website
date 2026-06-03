@@ -36,7 +36,9 @@
     </svg>
     My Journey
   </h2>
-  <p class="journey-subtitle"></p>
+  <p class="journey-subtitle">I've had the opportunity to develop software across a variety of settings — 
+    from small side-jobs to large corporation, mostly building financial systems. 
+    Here's my timeline of my journey</p>
 
   <div class="timeline-wrap-2" id="journey-timeline">
     {#each entries as entry (entry.id)}

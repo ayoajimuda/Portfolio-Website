@@ -3,7 +3,7 @@
 
 /* ── Global custom properties ── */
 @theme {
-  --max-width: 1600px;
+  --max-width: 1700px;
   --gutter-inline: clamp(16px, 4vw, 40px);
   --section-gap: 3rem;
   --accent-red: #FF2E2E;

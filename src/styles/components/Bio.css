@@ -21,11 +21,11 @@
 }
 
 .hero-wrap .hero-subtitle {
-  font-size: 12px;
+  font-size: 14px;
   color: #888;
   margin-bottom: 14px;
   line-height: 1.8;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
 }
 
 .hero-wrap .hero-hello {
