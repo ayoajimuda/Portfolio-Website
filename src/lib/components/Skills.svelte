@@ -4,7 +4,7 @@
 </script>
 
 <section class="skills-section" id="competences">
-  <h2 class="skills-heading">
+  <h1 class="skills-heading">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="40"
@@ -22,7 +22,7 @@
       />
     </svg>
     My Skills
-  </h2>
+  </h1>
 
   <div class="skills-cards-grid">
     <!-- Frontend -->

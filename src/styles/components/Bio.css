@@ -102,8 +102,8 @@
 
 /* Fix 2 – hover on the circle, not the inner <a> */
 .hero-wrap .hero-actions .hero-social-icon:hover {
-  border-color: #e03030;
-  color: #e03030;
+  border-color: #FF2E2E;
+  color: #FF2E2E;
 }
 
 /* Fix 3 – <a> tags inside must be transparent containers so

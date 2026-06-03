@@ -12,7 +12,6 @@
         menuOpen = false;
     }
 
-    // Close menu on outside click
     onMount(() => {
         const handleClick = (e) => {
             if (!e.target.closest('header')) closeMenu();
@@ -25,7 +24,6 @@
 <header>
     <div class="logo-text">Ajimuda<span class="logo-dot">.</span></div>
 
-    <!-- Hamburger button (visible on mobile only) -->
     <button
         class="hamburger"
         class:open={menuOpen}
@@ -38,7 +36,6 @@
         <span></span>
     </button>
 
-    <!-- Overlay backdrop -->
     {#if menuOpen}
         <div class="nav-overlay" onclick={closeMenu} aria-hidden="true"></div>
     {/if}

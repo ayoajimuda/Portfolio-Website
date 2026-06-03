@@ -7,12 +7,10 @@
   } from "../data/projects.js";
   import "../../styles/components/Projects.css";
 
-  // ── State ──────────────────────────────────────────────────────────────────
   let slideEl = $state(null);
   let selectedProjects = $state([]);
   let activeIndex = $state(0);
 
-  // ── Video modal state ──────────────────────────────────────────────────────
   let showModal = $state(false);
   let modalVideoSrc = $state("");
   let modalTitle = $state("");
@@ -29,7 +27,6 @@
     modalTitle = "";
   }
 
-  // ── Pagination handlers ────────────────────────────────────────────────────
   function handleScrollToCard(index) {
     activeIndex = index;
     scrollToCard(slideEl, index);
@@ -39,21 +36,18 @@
     activeIndex = getClosestCardIndex(slideEl);
   }
 
-  // ── Pick random projects on mount ──────────────────────────────────────────
   onMount(() => {
     selectedProjects = pickRandomProjects();
   });
 </script>
 
-<!-- ── Projects section ──────────────────────────────────────────────────── -->
-
 <section class="projects" id="projets">
-  <p class="projects-title">
+  <h1 class="projects-title">
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="58"
-      height="58"
-      viewBox="0 0 24 24"
+      width="50"
+      height="50"
+      viewBox="0 0 23 23"
       fill="none"
       stroke="currentColor"
       stroke-width="2"
@@ -65,10 +59,9 @@
         d="m6 14 1.5-2.9A2 2 0 0 1 9.24 10H20a2 2 0 0 1 1.94 2.5l-1.54 6a2 2 0 0 1-1.95 1.5H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H18a2 2 0 0 1 2 2v2"
       />
     </svg>
-    My Works
-  </p>
+    My Projects
+  </h1>
 
-  <!-- Horizontal scrollable card strip -->
   <div class="projects-slide" bind:this={slideEl} onscroll={handleScroll}>
     {#each selectedProjects as proj (proj.id)}
       <div class="projects-card">
@@ -126,7 +119,6 @@
     {/each}
   </div>
 
-  <!-- Pagination cubes — hidden on mobile via CSS -->
   <div class="pagination" role="tablist" aria-label="Project navigation">
     {#each selectedProjects as proj, i}
       <div
@@ -150,7 +142,6 @@
   </a>
 </section>
 
-<!-- ── Video modal ───────────────────────────────────────────────────────── -->
 {#if showModal}
   <!-- svelte-ignore a11y_click_events_have_key_events -->
   <!-- svelte-ignore a11y_no_static_element_interactions -->
@@ -176,7 +167,6 @@
           <i class="fa-solid fa-xmark"></i>
         </button>
       </div>
-      <!-- svelte-ignore a11y_media_has_caption -->
       <video src={modalVideoSrc} controls autoplay>
         <track kind="captions" />
       </video>

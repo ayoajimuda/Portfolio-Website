@@ -67,7 +67,7 @@
             r="227"
             fill="none"
             stroke="#e03030"
-            stroke-width="2.5"
+            stroke-width="7.5"
             stroke-dasharray="32 5 0 14 5 4 5 0 5 6 5"
             stroke-linecap="round"
           />

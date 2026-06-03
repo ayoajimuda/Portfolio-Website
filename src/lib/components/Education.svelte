@@ -3,9 +3,8 @@
   import "../../styles/components/Education.css";
 </script>
 
-<!-- Education Timeline (Horizontal) -->
 <section class="timeline-action" id="timeline">
-  <h2 class="education-heading">
+  <h1 class="education-heading">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="58"
@@ -25,7 +24,7 @@
       <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5" />
     </svg>
       Education
-  </h2>
+  </h1>
   <div class="timeline-wrap">
     <article class="t-entry">
       <img src="#" alt="BCU Logo" />

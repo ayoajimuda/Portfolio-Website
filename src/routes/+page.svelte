@@ -4,6 +4,7 @@
   import Skills from '$lib/components/Skills.svelte';
   import Projects from '$lib/components/Projects.svelte';
   import Journey from '$lib/components/Journey.svelte';
+  import Experience from '$lib/components/Experience.svelte';
   import '../styles/routes/home.css';
 </script>
 
@@ -12,5 +13,6 @@
   <Education />
   <Skills />
   <Projects />
+  <Experience/>
   <Journey />
 </main>

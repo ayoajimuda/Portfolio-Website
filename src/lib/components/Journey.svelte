@@ -2,10 +2,8 @@
   import "../../styles/components/Journey.css";
   import { loadJourney } from "/src/lib/data/journey.js";
 
-  // ── State ──────────────────────────────────────────────────────────────────
   let entries = $state([]);
 
-  // ── Load data ──────────────────────────────────────────────────────────────
   $effect(() => {
     loadJourney("/src/lib/data/journey.json")
       .then((data) => {
@@ -15,14 +13,13 @@
   });
 </script>
 
-<!-- Journey Section -->
 <section class="journey-section" id="journey">
-  <h2 class="journey-heading">
+  <h1 class="journey-heading">
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="40"
-      height="40"
-      viewBox="0 0 24 24"
+      width="50"
+      height="50"
+      viewBox="0 0 23 23"
       fill="none"
       stroke="currentColor"
       stroke-width="2"
@@ -35,7 +32,7 @@
       <circle cx="18" cy="5" r="3" />
     </svg>
     My Journey
-  </h2>
+  </h1>
   <p class="journey-subtitle">I've had the opportunity to develop software across a variety of settings — 
     from small side-jobs to large corporation, mostly building financial systems. 
     Here's my timeline of my journey</p>
