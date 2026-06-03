@@ -27,7 +27,7 @@
   </h1>
   <div class="timeline-wrap">
     <article class="t-entry">
-      <img src="#" alt="BCU Logo" />
+      <img src="/static/assets/img/bcu-logo.jpg" alt="BCU Logo" />
       <p class="t-date">2024 - 2027</p>
       <h3 class="t-title">BSc Computer Science</h3>
       <p class="t-org">Birmingham City University | Birmingham, UK</p>
@@ -36,7 +36,7 @@
     </article>
 
     <article class="t-entry">
-      <img src="#" alt="Cadbury College Logo" />
+      <img src="/static/assets/img/cadbury-logo.jpg" alt="Cadbury College Logo" />
       <p class="t-date">2023 - 2024</p>
       <h3 class="t-title">A Levels</h3>
       <p class="t-org">Cadbury College | Birmingham, UK</p>
@@ -45,7 +45,7 @@
     </article>
 
     <article class="t-entry">
-      <img src="#" alt="Grace High School Logo" />
+      <img src="/static/assets/img/graceschools-logo/jpg" alt="Grace High School Logo" />
       <p class="t-date">2017 - 2022</p>
       <h3 class="t-title">WAEC / GCSE</h3>
       <p class="t-org">Grace High School | Nigeria</p>

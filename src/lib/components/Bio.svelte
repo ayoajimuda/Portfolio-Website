@@ -74,7 +74,7 @@
         </svg>
         <div class="hero-avatar-inner">
           <img
-            src="../src/lib/assets/img.your-photo.png"
+            src="/src/static/assets/img.personal-photo.png"
             alt="Ayomide Ajimuda"
           />
           <svg

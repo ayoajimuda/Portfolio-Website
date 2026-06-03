@@ -9,27 +9,25 @@
     "links": {
       "github": "https://github.com/ayoajimuda/Music-URL-downloader"
     },
-    "image": "../images/projets/alpinejs.png"
+    "image": "../../../static/assets/img/project-image-2.png"
   },
 
   {
     "id": "02",
-    "type": "school project",
     "title": "Library Management System",
     "description": "A school project where I have to use my knowledge of Object Oriented Program to complete a school library management system", 
     "stack": ["Java", "Javadoc", "OOP"],
     "status": "Finished",
-    "category": ["software", "api", ""],
+    "category": ["software", "api", "OOP"],
     "links": {
       "github": "https://github.com/ayoajimuda/Library-Management-Project"
     },
     "details": "",
-    "image": "../images/projets/alpinejs.png"
+    "image": ""
   },
 
   {
     "id": "03",
-    "type": "personal project",
     "title": "Portfolio Website",
     "description": "A personal project of mine where I developed a portfolio website to display all my skills", 
     "stack": ["Svelte", "HTML", "CSS", "Json", "Javascript"],
@@ -39,12 +37,11 @@
       "github": "https://github.com/ayoajimuda/portfolio-website"
     },
     "details": "",
-    "image": "../images/projets/alpinejs.png"
+    "image": "../../../static/assets/img/project-image-1.jpg"
   },
   
   {
     "id": "04",
-    "type": "personal project",
     "title": "Hex Memory Stack Calculator",
     "description": "A personal project of mine designed to demonstrate experience in Declarative/Functional programming", 
     "stack": ["Python"],
@@ -54,7 +51,7 @@
       "github": "https://github.com/ayoajimuda/Hex-Memory-Stack-Calculator"
     },
     "details": "",
-    "image": "../images/projets/alpinejs.png"
+    "image": "../../../static/assets/img/project-image-4.png"
   },
 
     {
@@ -68,6 +65,6 @@
     "links": {
     },
     "details": "",
-    "image": "../images/projets/alpinejs.png"
+    "image": "../../../static/assets/img/project-image-3.jpg"
   }
 ]
