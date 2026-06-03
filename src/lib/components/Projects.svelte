@@ -41,7 +41,7 @@
   });
 </script>
 
-<section class="projects" id="projets">
+<section class="projects" id="projects" aria-label="Projects">
   <h1 class="projects-heading">
     <svg
       xmlns="http://www.w3.org/2000/svg"

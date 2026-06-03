@@ -3,7 +3,7 @@
   import "../../styles/components/Education.css";
 </script>
 
-<section class="timeline-action" id="timeline">
+<section class="timeline-action" id="education" aria-label="education">
   <h1 class="education-heading">
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -27,7 +27,7 @@
   </h1>
   <div class="timeline-wrap">
     <article class="t-entry">
-      <img src="/static/assets/img/bcu-logo.jpg" alt="BCU Logo" />
+      <img src="/assets/img/bcu-logo.jpg" alt="BCU Logo" />
       <p class="t-date">2024 - 2027</p>
       <h3 class="t-title">BSc Computer Science</h3>
       <p class="t-org">Birmingham City University | Birmingham, UK</p>

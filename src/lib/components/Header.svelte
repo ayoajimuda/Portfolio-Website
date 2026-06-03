@@ -43,10 +43,11 @@
     <nav aria-label="Primary navigation" class:open={menuOpen}>
         <div class="nav-logo">Ajimuda<span class="logo-dot">.</span></div>
         <ul>
-            <li><a href="#timeline"    class="nav-link" data-section="timeline"    onclick={closeMenu}>About</a></li>
+            <li><a href="#bio"    class="nav-link" data-section="bio"    onclick={closeMenu}>Bio</a></li>
+            <li><a href="#education"    class="nav-link" data-section="education"    onclick={closeMenu}>Education</a></li>
             <li><a href="#competences" class="nav-link" data-section="competences" onclick={closeMenu}>Skills</a></li>
-            <li><a href="#projects"    class="nav-link" data-section="projects"    onclick={closeMenu}>Web Gallery</a></li>
-            <li><a href="#contact"     class="nav-link" data-section="contact"     onclick={closeMenu}>Contact</a></li>
+            <li><a href="#projects"    class="nav-link" data-section="projects"    onclick={closeMenu}>Projects</a></li>
+            <li><a href="#experience"     class="nav-link" data-section="experience"     onclick={closeMenu}>Experience</a></li>
             <li><a href="#journey"     class="nav-link" data-section="journey"     onclick={closeMenu}>Journey</a></li>
         </ul>
     </nav>

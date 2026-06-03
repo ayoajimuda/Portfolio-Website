@@ -3,7 +3,7 @@
   import "../../styles/components/Bio.css";
 </script>
 
-<section id="main" class="page-active">
+<section id="main" class="page-active" aria-label="Bio">
   <div class="hero-wrap">
     <div>
       <p class="hero-subtitle">Aspiring Software Engineer</p>
