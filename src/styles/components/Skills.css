@@ -98,6 +98,15 @@
 
 /* Responsive */
 @media (min-width:100px) and (max-width:900px) {
+  .skills-heading{
+    font-size: 1.12rem;
+    margin: 0.6em 0 0.2em 0;
+    letter-spacing: 0.05em;
+    text-align: left;
+    font-weight: bold;
+    padding-left: 2vw;
+  }
+
   .skills-cards-grid {
     grid-template-columns: repeat(2, 1fr);
   }

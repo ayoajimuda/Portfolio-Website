@@ -1,0 +1,22 @@
+[
+  {
+    "icon": "/exp1.svg",
+    "title": "Frontend Engineer",
+    "desc": "Deployed three projects as a team leader, and built a real-time auction interface. Continuously improving UX, now exploring Framer Motion for animations."
+  },
+  {
+    "icon": "/exp2.svg",
+    "title": "Backend Engineer",
+    "desc": "Designed and built ISO-secure monolith and microservices systems where over 140 million USD worth of trades have been executed."
+  },
+  {
+    "icon": "/exp3.svg",
+    "title": "Teammate",
+    "desc": "Worked with stakeholders to develop Mining Commodity Exchange System. Led development team, and deployed projects successfully."
+  },
+  {
+    "icon": "/exp4.svg",
+    "title": "Aspiring DevOps",
+    "desc": "Maintained multiple systems in production and currently preparing for Red Hat and AWS Solutions Architect certifications."
+  }
+]

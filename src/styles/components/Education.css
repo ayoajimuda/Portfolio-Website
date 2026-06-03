@@ -106,6 +106,15 @@
 
 /* Responsive */
 @media (min-width:100px) and (max-width:800px) {
+  .education-heading{
+        font-size: 1.12rem;
+    margin: 0.6em 0 0.2em 0;
+    letter-spacing: 0.05em;
+    text-align: left;
+    font-weight: bold;
+    padding-left: 2vw;
+  }
+
   .timeline-action {
     padding: 4rem 2rem;
   }
