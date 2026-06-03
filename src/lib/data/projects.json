@@ -9,7 +9,7 @@
     "links": {
       "github": "https://github.com/ayoajimuda/Music-URL-downloader"
     },
-    "image": "../../../static/assets/img/project-image-2.png"
+    "image": "assets/img/project-image-2.png"
   },
 
   {
@@ -37,7 +37,7 @@
       "github": "https://github.com/ayoajimuda/portfolio-website"
     },
     "details": "",
-    "image": "../../../static/assets/img/project-image-1.jpg"
+    "image": "assets/img/project-image-1.png"
   },
   
   {
@@ -51,7 +51,7 @@
       "github": "https://github.com/ayoajimuda/Hex-Memory-Stack-Calculator"
     },
     "details": "",
-    "image": "../../../static/assets/img/project-image-4.png"
+    "image": "assets/img/project-image-4.png"
   },
 
     {
@@ -65,6 +65,6 @@
     "links": {
     },
     "details": "",
-    "image": "../../../static/assets/img/project-image-3.jpg"
+    "image": "assets/img/project-image-3.jpg"
   }
 ]
