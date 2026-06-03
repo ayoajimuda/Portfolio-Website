@@ -119,19 +119,19 @@
 
   <div class="info-row">
     <div class="hero-stat">
-      <span class="hero-stat-num">22</span>
+      <span class="hero-stat-num">20</span>
       <span class="hero-stat-lbl">Age</span>
     </div>
     <div class="hero-stat">
-      <span class="hero-stat-num">2+</span>
+      <span class="hero-stat-num">1+</span>
       <span class="hero-stat-lbl">Years of<br />experience</span>
     </div>
     <div class="hero-stat">
-      <span class="hero-stat-num">7</span>
+      <span class="hero-stat-num">5</span>
       <span class="hero-stat-lbl">Projects<br />worked on</span>
     </div>
     <div class="hero-stat">
-      <span class="hero-stat-num">4</span>
+      <span class="hero-stat-num">1</span>
       <span class="hero-stat-lbl">Projects<br />Deployed</span>
     </div>
   </div>

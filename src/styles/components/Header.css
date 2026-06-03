@@ -103,7 +103,7 @@ header nav ul {
 
 header nav ul li a {
   font-family: "Space Mono", "Courier New", monospace;
-  font-size: 1.2em;
+  font-size: 1.0em;
   font-weight: 900;
   color: white;
   text-decoration: none;
@@ -167,7 +167,7 @@ header .contact-link:hover {
 }
 
 /* ── Mobile ─────────────────────────────────── */
-@media (min-width:100px) and (max-width:1000px) {
+@media (min-width:100px) and (max-width:1024px) {
 
   header {
     padding: 1.2rem 1.5rem;
