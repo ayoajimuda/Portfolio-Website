@@ -1,4 +1,4 @@
-import experiencesData from "./experience.json";
+import experiencesData from "../data/experience.json";
 
 /**
  * @returns {{ icon: string, title: string, desc: string }[]}

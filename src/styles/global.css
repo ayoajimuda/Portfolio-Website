@@ -1,109 +1,34 @@
-@import url("https://fonts.googleapis.com/css2?family=Fira+Mono&family=Pixelify+Sans:wght@400..700&family=VT323&display=swap");
+@import "tailwindcss";
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  scroll-behavior: smooth;
-  font-size: 16px;
-  overflow-x: hidden;
-  box-sizing: border-box;
-}
-
-body {
-  color: #f0eeec;
-  font-family:
-    "Space Mono",
-    "Fira Mono",
-    "Courier New", monospace;
-  font-size: 15px;
-  line-height: 1.6;
-  overflow-x: hidden;
-  margin: 0;
-  background-color: var(--background, #0a0a0a);
-  background-size: cover;
-  background-attachment: fixed;
-  cursor: url("https://cdn.prod.website-files.com/6708f85ff3d3cba6aff436fb/671251b239d7aeb290a31ac5_cursor-default%402x.svg") 2 0, auto
-}
-
-body a,
-body button{
-  cursor: url("https://cdn.prod.website-files.com/6708f85ff3d3cba6aff436fb/671251b212e6b71494aa67ff_cursor-pointer%402x.svg") 2, 0, pointer;
+/* ── Global custom properties ── */
+@theme {
+  --max-width: 1700px;
+  --gutter-inline: clamp(16px, 4vw, 40px);
+  --section-gap: 3rem;
+  --accent-red: #FF2E2E;
+  --border-color: #fff;
+  --border-color2: #000;
+  --border-color3: #333;
+  --bg-color: #fffced;
+  --bg-color2: #fff;
+  --bg-color3: #000;
+  --bg-color4: #333;
+  --text-color: #fff;
+  --text-color2: #000;
+  --color-brand: #d42b2b;
+  --color-bg: #111111;
+  --color-surface: #1a1a1a;
+  --color-border: #333333;
+  --color-muted: #888580;
+  --color-text: #f0eeec;
+  --font-mono: "Fira Mono", "Courier New", monospace;
+  --font-space: "Space Mono", monospace;
+  --font-pixel: "VT323", monospace;
+  --font-pixel-sans: "Pixelify Sans", monospace;
+  --font-family: "Inter", sans-serif;
+  --fontTerminal: "Courier New", monospace;
+  --background: #000000;
 }
 
-:global(.mask-radial) {
-  -webkit-mask-image: radial-gradient(
-    ellipse at center,
-    transparent 0%,
-    var(--background, #0a0a0a) 80%
-  );
-  mask-image: radial-gradient(
-    ellipse at center,
-    transparent 0%,
-    var(--background, #0a0a0a) 80%
-  );
-}
 
-.content-layer {
-  position: relative;
-  z-index: 1;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
 
-.background-layer {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-}
-
-#app-mount {
-  position: relative;
-  z-index: 1;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-/* Scrollbar */
-::-webkit-scrollbar {
-  width: 4px;
-}
-
-::-webkit-scrollbar-track {
-  background: #111111;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #e11717;
-  border-radius: 2px;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-}
-a {
-  color: inherit;
-  text-decoration: none;
-}
-ul {
-  list-style: none;
-}
-button {
-  cursor: pointer;
-  border: none;
-  background: none;
-  font: inherit;
-}
-
-main{
-  flex: 1;
-}

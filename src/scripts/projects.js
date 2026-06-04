@@ -1,5 +1,5 @@
 import { onMount } from 'svelte';
-import projectsData from '$lib/data/projects.json';
+import projectsData from '../data/projects.json';
 
 /**
  * Shuffles and returns 4 random projects from the data.
