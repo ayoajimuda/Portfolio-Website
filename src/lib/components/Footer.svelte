@@ -72,14 +72,42 @@ onMount(() => {
     </p>
   </div>
 
-  <div class="footer-middle" aria-label="Social media links">
-  <div><i class="fa-brands fa-linkedin" aria-hidden="true"></i><a href="https://linkedin.com/in/ayomide-ajimuda" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="LinkedIn" >LinkedIn</a></div>
-  <div><i class="fa-brands fa-github" aria-hidden="true"></i><a href="https://github.com/AZAZ3LTRON" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="GitHub">Github</a></div>
-  <div><i class="fa-regular fa-envelope" aria-hidden="true"></i><a href="mailto:aydexter05@gmail.com" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Email">Email</a></div>
-  <div><i class="fa-brands fa-instagram" aria-hidden="true"></i><a href="https://www.instagram.com/ajims.archives/" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Instagram">Instagram</a></div>
-  <div><i class="fa-solid fa-code" aria-hidden="true"></i><a href="https://www.codewars.com/users/AyomideAjimuda18" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="CodeWars">CodeWars</a></div>
+<div class="footer-middle" aria-label="Social media links">
+  <div>
+    <a href="https://linkedin.com/in/ayomide-ajimuda" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+      <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+    </a>
+    <span>LinkedIn</span>
   </div>
 
+  <div>
+    <a href="https://github.com/AZAZ3LTRON" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+      <i class="fa-brands fa-github" aria-hidden="true"></i>
+    </a>
+    <span>Github</span>
+  </div>
+
+  <div>
+    <a href="mailto:aydexter05@gmail.com" aria-label="Email">
+      <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+    </a>
+    <span>Email</span>
+  </div>
+
+  <div>
+    <a href="https://www.instagram.com/ajims.archives/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+      <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+    </a>
+    <span>Instagram</span>
+  </div>
+
+  <div>
+    <a href="https://www.codewars.com/users/AyomideAjimuda18" target="_blank" rel="noopener noreferrer" aria-label="CodeWars">
+      <i class="fa-solid fa-code" aria-hidden="true"></i>
+    </a>
+    <span>CodeWars</span>
+  </div>
+</div>
   <div class="footer-right">
     <div class="footer-meta-col">
       <span class="footer-meta-label">Version &amp; Timezone</span>
