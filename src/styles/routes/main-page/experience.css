@@ -5,9 +5,9 @@
 /* ---------- Section ---------- */
 .experience-section {
   width: 100%;
-  padding: 80px 40px 100px;
+  padding: 80px 40px 50px;
   background: transparent;
-  min-height: 100vh;
+  min-height: 00vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -37,7 +37,7 @@
 #experience-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 28px;
+  gap: 48px;
   width: 100%;
   max-width: var(--max-width);
   margin-top: 60px;
@@ -48,52 +48,70 @@
   all: unset;
   cursor: default;
   box-sizing: border-box;
+  position: relative;
 }
 
-/* ---------- Card Base ---------- */
+
+#experience-grid > button::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 21px;
+  padding: 1px;
+  background: conic-gradient(
+    from var(--angle, 0deg),
+    transparent 0deg,
+    var(--accent-red) 60deg,
+    transparent 120deg
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  animation: orbit 3s linear infinite;
+  animation-play-state: paused;
+}
+
+#experience-grid > button:hover::before {
+  opacity: 1;
+  animation-play-state: running;
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes orbit {
+  to {
+    --angle: 360deg;
+  }
+}
+
 .exp-card {
   position: relative;
   background: #060606;
   border: 1px solid rgba(71, 59, 59, 0.07);
   border-radius: 20px;
-  padding: 30px 26px;
+  padding: 20px 20px;
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 32px;
   overflow: hidden;
   transition: border-color 0.3s ease, transform 0.3s ease;
-  min-height: 200px;
+  min-height: 140px;
 }
 
-.exp-card:hover {
-  border-color: var(--accent-red);
-  transform: translateY(-3px);
-}
-
-/* ---------- Bottom Glow ---------- */
-.exp-card::after {
-  content: '';
-  position: absolute;
-  bottom: -40px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 180px;
-  height: 80px;
-  background: radial-gradient(ellipse at center, var(--accent-red), transparent 70%);
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-}
-
-.exp-card:hover::after {
-  opacity: 1.4;
-}
-
-/* ---------- Card Icon ---------- */
 .exp-card-icon {
   flex-shrink: 0;
-  width: 125px;
-  height: 125px;
+  width: 90px;
+  height: 90px;
   object-fit: contain;
   filter: drop-shadow(0 4px 20px rgba(0, 255, 153, 0.12));
 }
@@ -121,7 +139,7 @@
   color: rgba(255, 255, 255, 0.72);
   line-height: 1.75;
   text-align: left;
-  max-width: 380px;
+  max-width: 600px;
 }
 
 
