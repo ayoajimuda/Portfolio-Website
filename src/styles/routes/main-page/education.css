@@ -1,0 +1,108 @@
+/*Education Section of the Page */
+.education-heading {
+  font-family: "Pixelify Sans", monospace;
+  font-size: 3.5rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #f0eeec;
+  text-align: center;
+  margin-bottom: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+}
+
+.timeline-action {
+  padding: 6rem 4rem;
+  max-width: 2100px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.timeline-action .timeline-wrap {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+}
+
+.timeline-action .timeline-wrap::before {
+  content: "";
+  position: absolute;
+  top: 30px;
+  left: 14.66%;
+  right: 14.66%;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.timeline-action .timeline-wrap .t-entry {
+  position: relative;
+  padding: 3.5rem 2rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.timeline-action .timeline-wrap .t-entry::before {
+  content: "";
+  position: absolute;
+  top: 25px;
+  left: 50%;
+  width: 15px;
+  height: 15px;
+  border-radius: 70%;
+  background: #111111;
+  border: 3px solid #e03030;
+  transform: translateX(-50%);
+  box-shadow: 0 0 10px #e03030;
+  z-index: 1;
+}
+
+.timeline-action .timeline-wrap .t-entry img {
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  -o-object-fit: contain;
+  object-fit: contain;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 6px;
+  border: 2px solid rgba(255, 255, 255, 0.07);
+  margin-bottom: 1rem;
+}
+
+.timeline-action .timeline-wrap .t-entry .t-date {
+  font-size: x-large;
+  margin-bottom: 0.4rem;
+  color: #e03030;
+}
+
+.timeline-action .timeline-wrap .t-entry .t-title {
+  font-family: "Space Mono", monospace;
+  font-weight: 800;
+  font-size: 2rem;
+  letter-spacing: 0.1em;
+  color: #f0eeec;
+  margin-bottom: 0.3rem;
+}
+
+.timeline-action .timeline-wrap .t-entry .t-org {
+  font-size: 1rem;
+  color: #888580;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-action .timeline-wrap .t-entry .t-desc {
+  font-size: 1rem;
+  color: #888580;
+  max-width: 260px;
+}
+
+.timeline-action .timeline-wrap .t-entry .t-results {
+  font-size: 0.9rem;
+  color: white;
+}

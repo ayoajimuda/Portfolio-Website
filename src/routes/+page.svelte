@@ -1,15 +1,22 @@
 <script>
   import { onMount } from "svelte";
-  import { getExperiences } from "../scripts/experience.js";
-  import { loadJourney } from "../scripts/journey.js";
-  import { pickRandomProjects, scrollToCard, getClosestCardIndex } from "../scripts/projects.js";
-  import "../styles/routes/home.css"
+  import { getExperiences } from "../lib/scripts/experience.js";
+  import { loadJourney } from "../lib/scripts/journey.js";
+  import { pickRandomProjects, scrollToCard, getClosestCardIndex } from "../lib/scripts/projects.js";
+
+  import "../styles/routes/main-page/bio.css"
+  import "../styles/routes/main-page/education.css"
+  import "../styles/routes/main-page/skills.css"
+  import "../styles/routes/main-page/projects.css"
+  import "../styles/routes/main-page/experience.css"
+  import "../styles/routes/main-page/journey.css"
+
   const experiences = getExperiences();
 
   let entries = $state([]);
 
   $effect(() => {
-    loadJourney("/src/data/journey.json")
+    loadJourney("/src/lib/data/journey.json")
       .then((data) => {
         entries = data;
       })

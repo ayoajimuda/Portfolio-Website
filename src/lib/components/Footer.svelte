@@ -1,6 +1,6 @@
 <script>
   import { onMount } from 'svelte';
-  import '../../styles/components/Footer.css';
+  import '../../styles/layout/Footer.css';
 </script>
 
     <footer id="contact" aria-label="Contact">

@@ -1,6 +1,6 @@
 <script>
     import { onMount } from 'svelte';
-    import '../../styles/components/Header.css';
+    import '../../styles/layout/Header.css';
 
     let menuOpen = $state(false);
 
