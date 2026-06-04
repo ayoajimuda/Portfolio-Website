@@ -1,11 +1,7 @@
+/* ── Spin animation (was missing — this is why the ring wasn't rotating) ── */
 @keyframes spin {
-  from {
-    transform: translate(-50%, -50%) rotate(0deg);
-  }
-
-  to {
-    transform: translate(-50%, -50%) rotate(360deg);
-  }
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
 .page-active {
@@ -13,6 +9,7 @@
   z-index: 1;
 }
 
+/* ─────────────────────────── HERO LAYOUT ─────────────────────────── */
 .hero-wrap {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -65,8 +62,7 @@
   background: transparent;
   padding: 12px 28px;
   font-family: "Space Mono", monospace;
-  font-size: 15px;
-  /* fixed typo: was "125x" */
+  font-size: 15px;           /* fixed typo: was "125x" */
   font-weight: 700;
   border-radius: 24px;
   cursor: pointer;
@@ -84,6 +80,10 @@
   gap: 20px;
 }
 
+/*
+  Fix 1 – make the circle itself the flex container so the <i> or <a>
+  always sits centred, regardless of whether there is a wrapping <a> tag.
+*/
 .hero-wrap .hero-actions .hero-social-icon {
   width: 52px;
   height: 52px;
@@ -92,28 +92,31 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #aaa;
+  color: #aaa;               /* icon colour when not hovered */
   font-size: 20px;
   cursor: pointer;
   transition: border-color 0.2s, color 0.2s;
 }
 
+/* Fix 2 – hover on the circle, not the inner <a> */
 .hero-wrap .hero-actions .hero-social-icon:hover {
   border-color: #FF2E2E;
   color: #FF2E2E;
 }
 
+/* Fix 3 – <a> tags inside must be transparent containers so
+   the icon inherits the colour set on .hero-social-icon */
 .hero-wrap .hero-actions .hero-social-icon a {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
   height: 100%;
-  color: inherit;
-  /* picks up #aaa or #e03030 from parent */
+  color: inherit;            /* picks up #aaa or #e03030 from parent */
   text-decoration: none;
 }
 
+/* ─────────────────────────── AVATAR (enlarged) ─────────────────────────── */
 .hero-avatar-wrap {
   display: flex;
   justify-content: flex-end;
@@ -134,6 +137,7 @@
   justify-content: center;
 }
 
+/* Increased from 352 → 410px */
 .hero-avatar-wrap .hero-avatar-inner {
   width: 410px;
   height: 410px;
@@ -153,6 +157,7 @@
   border-radius: 50%;
 }
 
+/* Dashed spinning ring — slightly larger than the avatar ring */
 .hero-avatar-wrap .hero-dashes {
   position: absolute;
   top: 50%;
@@ -201,4 +206,40 @@
   color: #888;
   line-height: 1.4;
   max-width: 100px;
+}
+
+@media (min-width: 100px) and (max-width: 1000px) {
+  .hero-wrap {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding-left: 90px;
+  }
+
+  .hero-wrap .hero-actions {
+    justify-content: center;
+    padding-right: 50px;
+  }
+
+  .hero-wrap .hero-actions .social-links {
+    justify-content: center;
+  }
+
+  .hero-avatar-wrap {
+    justify-content: center;
+    padding-right: 0;
+    order: -1;
+  }
+
+  .info-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(1rem, 3vw, 1.5rem);
+  }
+
+  .info-row .hero-stat {
+    padding-right: 0;
+    border-right: none;
+    flex-direction: column;
+    gap: 4px;
+    text-align: center;
+  }
 }

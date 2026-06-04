@@ -1,7 +1,16 @@
-/* Journey Section */
-.journey-section .timeline-wrap-2 .j-entry .j-content .j-image-grid .j-image:not([src]),
+.journey-section
+  .timeline-wrap-2
+  .j-entry
+  .j-content
+  .j-image-grid
+  .j-image:not([src]),
 .timeline-action .timeline-wrap .t-entry img:not([src]),
-.journey-section .timeline-wrap-2 .j-entry .j-content .j-image-grid [src=""].j-image,
+.journey-section
+  .timeline-wrap-2
+  .j-entry
+  .j-content
+  .j-image-grid
+  [src=""].j-image,
 .timeline-action .timeline-wrap .t-entry img[src=""] {
   display: none;
 }
@@ -27,11 +36,7 @@
   gap: 0.5rem;
 }
 
-.text-accent {
-  color: var(--accent-red);
-}
-
-.journey-section .journey-subtitle {
+.journey-section .journey-subtitle{
   padding: 0 10rem;
   margin-bottom: 4rem;
   justify-content: center;
@@ -152,4 +157,49 @@
   object-fit: cover;
   display: block;
   border-radius: 4px;
+}
+
+/* ── Mobile: stack back to single column ── */
+@media (min-width:100px) and (max-width:800px) {
+  .journey-section .journey-heading{
+    font-size: 1.12rem;
+    margin: 0.6em 0 0.2em 0;
+    letter-spacing: 0.05em;
+    text-align: left;
+    font-weight: bold;
+    padding-left: 2vw;
+  }
+
+  .journey-section .timeline-wrap-2::before {
+    left: 50px;
+  }
+
+  .journey-section .timeline-wrap-2 .j-entry {
+    grid-template-columns: 1fr;
+    padding-left: 3rem;
+  }
+
+  .journey-section .timeline-wrap-2 .j-entry::before {
+    left: 10px;
+    transform: none;
+  }
+
+  .journey-section .timeline-wrap-2 .j-entry:nth-child(odd) .j-date,
+  .journey-section .timeline-wrap-2 .j-entry:nth-child(even) .j-date {
+    text-align: left;
+    padding-left: 10px;
+    order: 1;
+  }
+
+  .journey-section .timeline-wrap-2 .j-entry:nth-child(odd) .j-content,
+  .journey-section .timeline-wrap-2 .j-entry:nth-child(even) .j-content {
+    text-align: left;
+    padding-left: 10px;
+    order: 2;
+  }
+
+  .journey-section .timeline-wrap-2 .j-entry:nth-child(even) .j-content .j-text,
+  .journey-section .timeline-wrap-2 .j-entry:nth-child(even) .j-content .j-image-grid {
+    margin-left: 0;
+  }
 }

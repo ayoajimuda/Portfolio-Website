@@ -1,8 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Fira+Mono&family=Pixelify+Sans:wght@400..700&family=VT323&display=swap");
+
+
+/* ---------- Section ---------- */
 .experience-section {
   width: 100%;
-  padding: 80px 40px 50px;
+  padding: 80px 40px 100px;
   background: transparent;
-  min-height: 00vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -32,79 +37,63 @@
 #experience-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 48px;
+  gap: 28px;
   width: 100%;
   max-width: var(--max-width);
   margin-top: 60px;
 }
 
 /* ---------- Card Button Reset ---------- */
-#experience-grid>button {
+#experience-grid > button {
   all: unset;
   cursor: default;
   box-sizing: border-box;
-  position: relative;
 }
 
-
-#experience-grid>button::before {
-  content: '';
-  position: absolute;
-  inset: -1px;
-  border-radius: 21px;
-  padding: 1px;
-  background: conic-gradient(from var(--angle, 0deg),
-      transparent 0deg,
-      var(--accent-red) 60deg,
-      transparent 120deg);
-  -webkit-mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  animation: orbit 3s linear infinite;
-  animation-play-state: paused;
-}
-
-#experience-grid>button:hover::before {
-  opacity: 1;
-  animation-play-state: running;
-}
-
-@property --angle {
-  syntax: '<angle>';
-  initial-value: 0deg;
-  inherits: false;
-}
-
-@keyframes orbit {
-  to {
-    --angle: 360deg;
-  }
-}
-
+/* ---------- Card Base ---------- */
 .exp-card {
   position: relative;
   background: #060606;
   border: 1px solid rgba(71, 59, 59, 0.07);
   border-radius: 20px;
-  padding: 20px 20px;
+  padding: 30px 26px;
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 32px;
   overflow: hidden;
   transition: border-color 0.3s ease, transform 0.3s ease;
-  min-height: 140px;
+  min-height: 200px;
 }
 
+.exp-card:hover {
+  border-color: var(--accent-red);
+  transform: translateY(-3px);
+}
+
+/* ---------- Bottom Glow ---------- */
+.exp-card::after {
+  content: '';
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 180px;
+  height: 80px;
+  background: radial-gradient(ellipse at center, var(--accent-red), transparent 70%);
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.exp-card:hover::after {
+  opacity: 1.4;
+}
+
+/* ---------- Card Icon ---------- */
 .exp-card-icon {
   flex-shrink: 0;
-  width: 90px;
-  height: 90px;
+  width: 125px;
+  height: 125px;
   object-fit: contain;
   filter: drop-shadow(0 4px 20px rgba(0, 255, 153, 0.12));
 }
@@ -132,5 +121,32 @@
   color: rgba(255, 255, 255, 0.72);
   line-height: 1.75;
   text-align: left;
-  max-width: 600px;
+  max-width: 380px;
 }
+
+
+@media (max-width: 1024px) {
+  .exp-card-icon {
+    width: 80px;
+    height: 80px;
+  }
+
+  .exp-card {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 28px 24px;
+  }
+
+  .exp-card-icon {
+    width: 70px;
+    height: 70px;
+  }
+
+  #experience-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-section {
+    padding: 60px 20px 80px;
+    }
+  }
