@@ -1,5 +1,6 @@
 <script>
-    import '../../styles/routes/projects-page.css';
+    import '../../styles/routes/projects-page/projects-page.css'
+    import './+page-server.js'
     import FallingPattern from '$lib/components/FallingPattern.svelte';
 </script>
 

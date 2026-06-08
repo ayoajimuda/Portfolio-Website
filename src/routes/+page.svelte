@@ -524,7 +524,6 @@
     <div class="projects-slide" bind:this={slideEl} onscroll={handleScroll}>
       {#each selectedProjects as proj (proj.id)}
         <div class="projects-card">
-          <!-- Icon buttons (visually hoisted to the top via order: -1 in CSS) -->
           <div class="projects-links">
             {#if proj.links?.demo && proj.links.demo !== "#"}
               <a
@@ -594,8 +593,7 @@
       {/each}
     </div>
 
-    <!-- "See all projects" CTA -->
-    <a class="bouton-all-projects" href="/projets">
+    <a class="bouton-all-projects" href="src\routes\projects\+page.svelte">
       <p>To see all my projects</p>
       <i class="fa-solid fa-arrow-right"></i>
     </a>
