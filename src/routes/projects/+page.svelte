@@ -1,16 +1,10 @@
 <script>
-    import '../../styles/routes/projects-page/projects-page.css'
-    import './+page-server.js'
-    import FallingPattern from '$lib/components/FallingPattern.svelte';
+  import { onMount } from 'svelte';
+import "../../styles/layout/layout.css";
+  import '../../styles/routes/projects-page/projects-page.css';
 </script>
 
-
-<svelte:head>
-  <title>Projects — Ayomide Ajimuda</title>
-  <meta name="description" content="All my projects (frontend, backend, full-stack, mobile, API) with filters and links." />
-</svelte:head>
-
-  <a class="back-link" href="/" aria-label="Retour à l’accueil">
+  <a class="back-link" href="/" aria-label="Back to home">
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i><span>Welcome</span>
   </a>
 
@@ -41,11 +35,3 @@
     </section>
   </main>
 
-  <dialog id="videoModal" class="modal" aria-label="Demonstration video">
-    <button class="modal-close" id="closeModal" aria-label="Fermer la vidéo">
-      <i class="fa-solid fa-xmark"></i>
-    </button>
-
-    <h2 class="modal-title" id="modalTitle"></h2>
-    <video id="modalVideo" controls playsinline preload="metadata"></video>
-  </dialog>

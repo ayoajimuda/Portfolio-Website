@@ -1,8 +1,8 @@
 <script>
   import { onMount } from "svelte";
-  import { getExperiences } from "../lib/scripts/experience.js";
-  import { loadJourney } from "../lib/scripts/journey.js";
-  import { pickRandomProjects, scrollToCard, getClosestCardIndex } from "../lib/scripts/projects.js";
+  import { getExperiences } from "../../lib/scripts/experience.js";
+  import { loadJourney } from "../../lib/scripts/journey.js";
+  import { pickRandomProjects, scrollToCard, getClosestCardIndex } from "../../lib/scripts/projects.js";
 
   import "../styles/routes/main-page/bio.css"
   import "../styles/routes/main-page/education.css"
