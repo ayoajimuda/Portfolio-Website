@@ -4,12 +4,12 @@
   import { loadJourney } from "../../lib/scripts/journey.js";
   import { pickRandomProjects, scrollToCard, getClosestCardIndex } from "../../lib/scripts/projects.js";
 
-  import "../styles/routes/main-page/bio.css"
-  import "../styles/routes/main-page/education.css"
-  import "../styles/routes/main-page/skills.css"
-  import "../styles/routes/main-page/projects.css"
-  import "../styles/routes/main-page/experience.css"
-  import "../styles/routes/main-page/journey.css"
+  import "../../styles/routes/main-page/bio.css"
+  import "../../styles/routes/main-page/education.css"
+  import "../../styles/routes/main-page/skills.css"
+  import "../../styles/routes/main-page/projects.css"
+  import "../../styles/routes/main-page/experience.css"
+  import "../../styles/routes/main-page/journey.css"
 
   const experiences = getExperiences();
 

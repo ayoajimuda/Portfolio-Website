@@ -1,4 +1,3 @@
-/* ── Spin animation (was missing — this is why the ring wasn't rotating) ── */
 @keyframes spin {
   from { transform: translate(-50%, -50%) rotate(0deg); }
   to   { transform: translate(-50%, -50%) rotate(360deg); }
@@ -9,7 +8,6 @@
   z-index: 1;
 }
 
-/* ─────────────────────────── HERO LAYOUT ─────────────────────────── */
 .hero-wrap {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -80,10 +78,6 @@
   gap: 20px;
 }
 
-/*
-  Fix 1 – make the circle itself the flex container so the <i> or <a>
-  always sits centred, regardless of whether there is a wrapping <a> tag.
-*/
 .hero-wrap .hero-actions .hero-social-icon {
   width: 52px;
   height: 52px;
@@ -98,14 +92,11 @@
   transition: border-color 0.2s, color 0.2s;
 }
 
-/* Fix 2 – hover on the circle, not the inner <a> */
 .hero-wrap .hero-actions .hero-social-icon:hover {
   border-color: #FF2E2E;
   color: #FF2E2E;
 }
 
-/* Fix 3 – <a> tags inside must be transparent containers so
-   the icon inherits the colour set on .hero-social-icon */
 .hero-wrap .hero-actions .hero-social-icon a {
   display: flex;
   align-items: center;
@@ -116,7 +107,6 @@
   text-decoration: none;
 }
 
-/* ─────────────────────────── AVATAR (enlarged) ─────────────────────────── */
 .hero-avatar-wrap {
   display: flex;
   justify-content: flex-end;
@@ -124,7 +114,6 @@
   padding-right: 180px;
 }
 
-/* Increased from 380 → 440px */
 .hero-avatar-wrap .hero-avatar-ring {
   width: 440px;
   height: 440px;
@@ -137,7 +126,6 @@
   justify-content: center;
 }
 
-/* Increased from 352 → 410px */
 .hero-avatar-wrap .hero-avatar-inner {
   width: 410px;
   height: 410px;
@@ -157,7 +145,6 @@
   border-radius: 50%;
 }
 
-/* Dashed spinning ring — slightly larger than the avatar ring */
 .hero-avatar-wrap .hero-dashes {
   position: absolute;
   top: 50%;
@@ -208,7 +195,7 @@
   max-width: 100px;
 }
 
-@media (min-width: 100px) and (max-width: 1000px) {
+@media (min-width:100px) and (max-width:1024px) {
   .hero-wrap {
     grid-template-columns: 1fr;
     text-align: center;

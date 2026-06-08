@@ -1,5 +1,5 @@
 <script>
-  import "../styles/layout/layout.css";
+  import "../../styles/layout/layout.css";
 import Header from "$lib/components/Header.svelte";
 import Footer from "$lib/components/Footer.svelte";
 import FallingPattern from "$lib/components/FallingPattern.svelte";
