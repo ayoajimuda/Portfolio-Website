@@ -593,7 +593,7 @@
       {/each}
     </div>
 
-    <a class="bouton-all-projects" href="src\routes\projects\+page.svelte">
+    <a class="bouton-all-projects" href="/projects">
       <p>To see all my projects</p>
       <i class="fa-solid fa-arrow-right"></i>
     </a>

@@ -12,7 +12,7 @@ import FallingPattern from "$lib/components/FallingPattern.svelte";
 <svelte:window bind:scrollY />
 
 <svelte:head>
-  <title>Ayomide Ajimuda</title>
+  <title>Professional - Ayomide Ajimuda</title>
   <meta name="description" content="..." />
   <meta name="keywords" content="..." />
   <meta name="author" content="Ayomide Ajimuda" />
