@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /* ── Global custom properties ── */
-:root {
+@theme{
   --max-width: 1700px;
   --gutter-inline: clamp(16px, 4vw, 40px);
   --section-gap: 3rem;
