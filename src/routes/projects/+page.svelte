@@ -1,8 +1,19 @@
 <script>
   import { onMount } from 'svelte';
-import "../../styles/layout/layout.css";
+  import '../../styles/routes/projects-page/page-layout.css'
   import '../../styles/routes/projects-page/projects-page.css';
+
+  onMount(async () => {
+    const { init } = await import('./projects.js');
+    init();
+  });
 </script>
+
+<svelte:head>
+  <title>Projects — Ayomide Ajimuda</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Mono&family=Pixelify+Sans:wght@400..700&family=VT323&display=swap" rel="stylesheet" />
+</svelte:head>
 
   <a class="back-link" href="/" aria-label="Back to home">
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i><span>Welcome</span>
@@ -34,4 +45,12 @@ import "../../styles/layout/layout.css";
     <section id="grid" class="grid" aria-live="polite">
     </section>
   </main>
+
+    <dialog id="videoModal" class="modal" aria-label="Démonstration vidéo">
+    <button class="modal-close" id="closeModal" aria-label="Fermer la vidéo">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <h2 class="modal-title" id="modalTitle"></h2>
+    <video id="modalVideo" controls playsinline preload="metadata"></video>
+  </dialog>
 

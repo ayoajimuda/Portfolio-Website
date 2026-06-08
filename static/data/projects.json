@@ -1,0 +1,71 @@
+[
+  {
+    "id": "01",
+    "title": "Music URL Downloader",
+    "description": "A simple command line music downloader that is capable of download songs from Spotify & Youtube Music in different formats such as mp3 & flac. GUI is currently in development", 
+    "stack": ["Python", "QT"],
+    "status": "In development",
+    "category": ["software", "api", "application"],
+    "links": {
+      "github": "https://github.com/ayoajimuda/Music-URL-downloader"
+    },
+    "details": "",
+    "image": "/assets/img/project-image-2.png"
+  },
+
+  {
+    "id": "02",
+    "title": "Library Management System",
+    "description": "A school project where I have to use my knowledge of Object Oriented Program to complete a school library management system", 
+    "stack": ["Java", "Javadoc", "OOP"],
+    "status": "Finished",
+    "category": ["software", "api", "OOP"],
+    "links": {
+      "github": "https://github.com/ayoajimuda/Library-Management-Project"
+    },
+    "details": "",
+    "image": ""
+  },
+
+  {
+    "id": "03",
+    "title": "Portfolio Website",
+    "description": "A personal project of mine where I developed a portfolio website to display all my skills", 
+    "stack": ["Svelte", "HTML", "CSS", "Json", "Javascript"],
+    "status": "In development",
+    "category": ["website"],
+    "links": {
+      "github": "https://github.com/ayoajimuda/portfolio-website"
+    },
+    "details": "",
+    "image": "/assets/img/project-image-1.png"
+  },
+  
+  {
+    "id": "04",
+    "title": "Hex Memory Stack Calculator",
+    "description": "A personal project of mine designed to demonstrate experience in Declarative/Functional programming", 
+    "stack": ["Python"],
+    "status": "Finished",
+    "category": ["application"],
+    "links": {
+      "github": "https://github.com/ayoajimuda/Hex-Memory-Stack-Calculator"
+    },
+    "details": "",
+    "image": "/assets/img/project-image-4.png"
+  },
+
+    {
+    "id": "05",
+    "type": "school project",
+    "title": "Solar Tracker",
+    "description": "A hands-on project I made during my first year to demonstrate my expertise in Computer Systems & Programming for my Innovation Fest project", 
+    "stack": ["Arduino", "Raspberry Pi", "Python", "C/C++", "3D Design", "3D Printing"],
+    "status": "Finished",
+    "category": ["IoT", "Automated Systems"],
+    "links": {
+    },
+    "details": "",
+    "image": "/assets/img/project-image-3.jpg"
+  }
+]
