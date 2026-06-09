@@ -1,9 +1,11 @@
 @import "tailwindcss";
 
 @font-face {
-  font-family: 'DepartureMono';
-  src: url('/fonts/DepartureMono-1.500/DepartureMono-Regular.woff2') format('woff2'),
-       url('/fonts/DepartureMono-1.500/DepartureMono-Regular.woff') format('woff');
+  font-family: "DepartureMono";
+  src:
+    url("/fonts/DepartureMono-1.500/DepartureMono-Regular.woff2")
+      format("woff2"),
+    url("/fonts/DepartureMono-1.500/DepartureMono-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -12,7 +14,8 @@
   --max-width: 1700px;
   --gutter-inline: clamp(16px, 4vw, 40px);
   --section-gap: 3rem;
-  --accent-red: #FF2E2E;
+  --accent-red: #ff2e2e;
+  --accent-green: #00ff26;
   --border-color: #fff;
   --border-color2: #000;
   --border-color3: #333;
@@ -28,7 +31,7 @@
   --color-border: #333333;
   --color-muted: #888580;
   --color-text: #f0eeec;
-  --fontMono: 'DepartureMono', monospace;
+  --fontMono: "DepartureMono", monospace;
   --font-mono: "Fira Mono", "Courier New", monospace;
   --font-space: "Space Mono", monospace;
   --font-pixel: "VT323", monospace;
