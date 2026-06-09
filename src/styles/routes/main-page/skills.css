@@ -1,5 +1,5 @@
 .skills-heading {
-  font-family: "Pixelify Sans", monospace;
+  font-family: var(--fontMono);
   font-weight: 700;
   font-size: 3.5rem;
   letter-spacing: 0.2em;
@@ -51,7 +51,7 @@
 }
 /* Card heading */
 .card-title {
-  font-family: 'Pixelify Sans', monospace;
+  font-family: var(--fontMono);
   font-size: 1.5rem;
   font-weight: 700;
   color: #e03030; 

@@ -35,6 +35,7 @@
 }
 
 .hero-wrap .hero-name {
+  font-family: var(--fontMono);
   font-size: 75px;
   font-weight: 600;
   color: #e03030;

@@ -22,7 +22,7 @@
 }
 
 .journey-section .journey-heading {
-  font-family: "Pixelify Sans", monospace;
+  font-family: var(--fontMono);
   font-size: 3.5rem;
   font-weight: 700;
   letter-spacing: 0.1em;
@@ -123,7 +123,7 @@
 }
 
 .journey-section .timeline-wrap-2 .j-entry .j-date {
-  font-family: "Pixelify Sans", monospace;
+  font-family: "Space Mono", "Courier New", monospace;
   font-size: 2rem;
   letter-spacing: 0.04em;
   padding-top: 0.2rem;

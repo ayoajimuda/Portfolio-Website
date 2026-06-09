@@ -1,5 +1,4 @@
-@import url('../../global.css');
-
+@import '../../global.css';
 * {
     box-sizing: border-box;
 }
@@ -66,13 +65,13 @@ body {
     font-family: var(--fontMono), monospace;
     text-transform: uppercase;
     letter-spacing: .08em;
-    font-size: clamp(1.8rem, 3.6vw, 2.6rem);
+    font-size: clamp(2.5rem, 3.6vw, 2.6rem);
     margin: 0 0 6px 0;
 }
 
 .subtitle {
     margin: 0 0 16px 0;
-    color: #555;
+    color: #fffefe;
 }
 
 /* ===== Toolbar ===== */
@@ -81,8 +80,8 @@ body {
     gap: 12px;
     grid-template-columns: 1fr;
     align-items: start;
-    border-top: 1.5px solid var(--border-color2);
-    border-bottom: 1.5px solid var(--border-color2);
+    border-top: 1.5px solid var(--border-color);
+    border-bottom: 1.5px solid var(--border-color);
     padding: 12px 0;
 }
 
@@ -95,7 +94,7 @@ body {
 .filters {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 10px;
 }
 
 .filter-btn {
@@ -104,9 +103,10 @@ body {
     background: var(--bg-color2);
     color: var(--text-color2);
     font-family: var(--fontMono), monospace;
-    font-weight: 700;
+    font-weight: 1000;
+    font-size: 1.25rem;
     text-transform: uppercase;
-    letter-spacing: .06em;
+    letter-spacing: .07em;
     padding: 8px 12px;
     cursor: pointer;
 }
@@ -120,22 +120,22 @@ body {
 
 .tools {
     display: flex;
-    gap: 8px;
+    gap: 10px;
 }
 
 .search,
 .sort {
-    border: 1.5px solid var(--border-color2);
+    border: 1.5px solid var(--border-color);
     background: var(--bg-color2);
     padding: 8px 10px;
     font: inherit;
+    color: var(--text-color2);
 }
 
 .search {
-    width: min(280px, 50vw);
+    width: min(300px, 50vw);
 }
 
-/* ===== Grille de cartes ===== */
 .grid {
     display: grid;
     gap: 16px;
@@ -143,12 +143,11 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
 
-/* Carte */
 .card {
     display: grid;
     grid-template-rows: auto 1fr auto;
     background: var(--bg-color2);
-    border: 1.5px solid var(--border-color2);
+    border: 1px solid var(--border-color2);
     overflow: clip;
 }
 
@@ -168,7 +167,7 @@ body {
 .card__body {
     padding: 12px;
     display: grid;
-    gap: 10px;
+    gap: 12px;
 }
 
 .card__title {
@@ -176,6 +175,7 @@ body {
     font-weight: 800;
     letter-spacing: .02em;
     font-size: 1rem;
+    color: var(--text-color2);
 }
 
 .card__desc {
@@ -195,7 +195,7 @@ body {
     background: var(--bg-color2);
     padding: 2px 8px;
     font-family: var(--fontMono), monospace;
-    font-size: .78rem;
+    font-size: 1rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: .02em;

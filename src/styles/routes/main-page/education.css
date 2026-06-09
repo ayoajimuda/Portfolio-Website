@@ -1,5 +1,5 @@
 .education-heading{
-  font-family: "Pixelify Sans", monospace;
+  font-family: var(--fontMono);
   font-size: 3.5rem;
   font-weight: 700;
   letter-spacing: 0.1em;
