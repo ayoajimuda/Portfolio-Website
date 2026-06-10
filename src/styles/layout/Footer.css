@@ -17,7 +17,7 @@ footer .footer-top {
 footer .footer-top .footer-heading {
   align-items: center;
   justify-content: center;
-  font-family: "VT323", monospace;
+  font-family: var(--fontMono);
   font-size: clamp(2rem, 5vw, 3.5rem);
   color: #f0eeec;
   font-weight: 400;
@@ -127,7 +127,7 @@ footer .footer-middle div a:hover {
 
 footer .footer-middle div span {
   display: block;
-  font-family: "Inter", sans-serif;
+  font-family: var(--font-mono);
   font-size: 1rem;
   font-style: italic;
   text-transform: uppercase;

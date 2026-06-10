@@ -81,7 +81,7 @@
 }
 
 .timeline-action .timeline-wrap .t-entry .t-title {
-  font-family: "Space Mono", monospace;
+  font-family: var(--fontMono);
   font-weight: 800;
   font-size: 2rem;
   letter-spacing: 0.1em;
@@ -90,18 +90,21 @@
 }
 
 .timeline-action .timeline-wrap .t-entry .t-org {
+  font-family: var(--font-mono);
   font-size: 1rem;
-  color: #888580;
+  color: #ffffff;
   margin-bottom: 0.5rem;
 }
 
 .timeline-action .timeline-wrap .t-entry .t-desc {
+  font-family: var(--font-mono);
   font-size: 1rem;
-  color: #888580;
+  color: #ffffff;
   max-width: 260px;
 }
 
 .timeline-action .timeline-wrap .t-entry .t-results {
+  font-family: var(--font-mono);
   font-size: 0.9rem;
   color: white;
 }

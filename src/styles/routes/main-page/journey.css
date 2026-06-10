@@ -44,7 +44,8 @@
   font-size: 1rem;
   color: #ffffff;
   line-height: 2.0;
-  font-family: "Space Mono", "Courier New", monospace;
+  font-family: var(--font-space);
+  font-weight: 700;
 }
 
 .journey-section .timeline-wrap-2 {
@@ -123,7 +124,8 @@
 }
 
 .journey-section .timeline-wrap-2 .j-entry .j-date {
-  font-family: "Space Mono", "Courier New", monospace;
+  font-family: var(--fontMono);
+  font-weight: 700;
   font-size: 2rem;
   letter-spacing: 0.04em;
   padding-top: 0.2rem;
@@ -136,7 +138,8 @@
 }
 
 .journey-section .timeline-wrap-2 .j-entry .j-content .j-text {
-  font-family: "Space Mono", "Courier New", monospace;
+  font-family: var(--font-space);
+  font-weight: 700;
   font-size: 0.95rem;
   color: #f0eeec;
   line-height: 1.8;

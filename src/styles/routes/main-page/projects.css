@@ -113,7 +113,7 @@
   font-size: 0.85rem;
   font-style: italic;
   font-weight: 600;
-  font-family: var(--font-pixel-sans);
+  font-family: var(--fontMono);
   padding: 4px 2px;
   text-align: center;
   text-transform: uppercase;
@@ -409,7 +409,7 @@
   .projects-stack {
     display: block;
     background: none;
-    color: #888;
+    color: #ffffff;
     padding: 0;
     width: auto;
     border: none;
@@ -425,7 +425,7 @@
     font-size: 0.68rem;
     font-style: normal;
     font-weight: 600;
-    color: #aaa;
+    color: #ffffff;
     background: none;
     padding: 0;
     text-transform: uppercase;
@@ -452,8 +452,8 @@
   .projects-text p {
     margin: 0;
     font-size: 0.94rem;
-    color: #222;
-    font-family: var(--font-family);
+    color: #ffffff;
+    font-family: var(--fontTerminal);
     line-height: 1.45;
     max-height: 2.9em;
     overflow: hidden;

@@ -119,7 +119,7 @@
 }
 
 .exp-card-title {
-  font-family: 'Space Mono', monospace;
+  font-family: var(--fontMono);
   font-size: clamp(1.1rem, 2vw, 1.45rem);
   font-weight: 700;
   color: #ffffff;
@@ -129,7 +129,7 @@
 }
 
 .exp-card-desc {
-  font-family: 'Space Mono', monospace;
+  font-family: var(--font-mono)
   font-size: 0.82rem;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.72);
