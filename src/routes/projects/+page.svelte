@@ -1,127 +1,110 @@
 <script>
-  import { onMount } from 'svelte';
   import FallingPattern from '$lib/components/FallingPattern.svelte';
+  import '../../styles/global.css';
+  import { createStore } from './projects.svelte.js'
   import '../../styles/routes/projects-page/projects-page.css';
 
-  let projects = $state([]);
-  let activeCat = $state('all');
-  let q = $state('');
-  let sort = $state('id-asc');
-  let loading = $state(true);
-  let error = $state(false);
-
-  let dialogEl = $state(null);
-  let videoEl = $state(null);
-  let modalVideoTitle = $state('');
-  let modalVideoSrc = $state('');
-
-  let categories = $derived.by(() => {
-    const cats = new Set();
-    projects.forEach(p => (p.category || []).forEach(c => cats.add(c)));
-    return ['all', ...[...cats].sort((a, b) => a.localeCompare(b))];
-  });
-
-  let filtered = $derived.by(() => {
-    const search = q.trim().toLowerCase();
-    let list = projects.filter(p => {
-      const catOk = activeCat === 'all' || (p.category || []).includes(activeCat);
-      if (!catOk) return false;
-      if (!search) return true;
-      const hay = `${p.title} ${p.description || ''} ${(p.stack || []).join(' ')}`.toLowerCase();
-      return hay.includes(search);
-    });
-
-    const sorted = [...list];
-    switch (sort) {
-      case 'id-desc':  sorted.sort((a, b) => String(b.id).localeCompare(String(a.id), undefined, { numeric: true })); break;
-      case 'title-asc': sorted.sort((a, b) => a.title.localeCompare(b.title)); break;
-      case 'title-desc': sorted.sort((a, b) => b.title.localeCompare(a.title)); break;
-      case 'status':
-        sorted.sort((a, b) => {
-          const aDone = a.status?.toLowerCase().includes('finished') ? 0 : 1;
-          const bDone = b.status?.toLowerCase().includes('finished') ? 0 : 1;
-          return aDone - bDone || a.title.localeCompare(b.title);
-        });
-        break;
-      default: sorted.sort((a, b) => String(a.id).localeCompare(String(b.id), undefined, { numeric: true }));
-    }
-    return sorted;
-  });
-
-  function openVideo(src, title) {
-    modalVideoSrc = src;
-    modalVideoTitle = title;
-    if (dialogEl?.showModal) dialogEl.showModal();
-  }
-
-  function closeVideo() {
-    if (videoEl) { videoEl.pause(); videoEl.src = ''; }
-    if (dialogEl?.close) dialogEl.close();
-  }
-
-  onMount(async () => {
-    window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeVideo(); });
-    try {
-      const r = await fetch('/data/projects.json');
-      if (!r.ok) throw new Error(`HTTP ${r.status}`);
-      projects = await r.json();
-    } catch (err) {
-      console.error('Error loading projects:', err);
-      error = true;
-    } finally {
-      loading = false;
-    }
-  });
+ const s = createStore();
 </script>
+
+<style>
+  :global(html), :global(body) {
+    margin: 0;
+    padding: 0;
+    background: #000;
+  }
+
+  :global(.pg-bg) {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    background: #000;
+  }
+
+  :global(.pg-wrap) {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+  }
+
+  /* Lock header into normal flow — cannot be overridden */
+  :global(.page-header) {
+    position: static !important;
+    display: block !important;
+    background-color: transparent;
+  }
+
+  :global(.toolbar) {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 12px;
+    padding: 12px 0;
+  }
+
+  @media (min-width: 760px) {
+    :global(.toolbar) {
+      grid-template-columns: 1fr auto !important;
+    }
+  }
+
+  :global(.filters) {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 10px;
+  }
+
+  :global(.grid) {
+    display: grid !important;
+    gap: 16px;
+    padding-block: 20px 48px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+
+  :global(.container) {
+    max-width: min(1200px, calc(100% - 80px));
+    margin-inline: auto;
+  }
+</style>
 
 <svelte:head>
   <title>Projects — Ayomide Ajimuda</title>
   <meta name="description" content="All my projects with filters and links." />
   <meta name="author" content="Ayomide Ajimuda" />
   <meta name="robots" content="index, follow" />
+  <link rel="preload" href="/fonts/DepartureMono-1.500/DepartureMono-Regular.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Fira+Mono&family=Pixelify+Sans:wght@400..700&family=VT323&display=swap" rel="stylesheet" />
 </svelte:head>
 
-<div class="background-layer">
-  <FallingPattern
-    color="#FF2E2E"
-    backgroundColor="#000000"
-    duration={80}
-    blurIntensity="0.1rem"
-    density={1}
-  />
+<div class="pg-bg">
+  <FallingPattern color="#FF2E2E" backgroundColor="#000000" duration={80} blurIntensity="0.1rem" density={1} />
 </div>
 
-<div class="content-layer">
+<div class="pg-wrap" style="display:{s.ready ? 'block' : 'none'}">
+
   <a class="back-link" href="/" aria-label="Back to home">
     <i class="fa-solid fa-arrow-left" aria-hidden="true"></i><span>Welcome</span>
   </a>
 
   <header class="page-header container">
     <h1 class="title">Personal Experiments</h1>
-    <p class="subtitle">List of all personal projects & achievements.</p>
-
+    <p class="subtitle">List of all personal projects &amp; achievements.</p>
     <div class="toolbar">
       <div class="filters" role="tablist" aria-label="Category Filter">
-        {#each categories as cat}
-          <button
-            class="filter-btn"
-            type="button"
-            role="tab"
-            aria-selected={cat === activeCat}
-            onclick={() => activeCat = cat}
-          >
+        {#each s.categories as cat}
+          <button class="filter-btn" type="button" role="tab"
+            aria-selected={cat === s.activeCat}
+            onclick={() => s.activeCat = cat}>
             {cat === 'all' ? 'All' : cat}
           </button>
         {/each}
       </div>
-
       <div class="tools">
         <label class="sr-only" for="q">Search</label>
-        <input id="q" class="search" type="search" placeholder="Search for a project"
-               autocomplete="off" bind:value={q} />
-        <select id="sort" class="sort" aria-label="Project Sort" bind:value={sort}>
+        <input id="q" class="search" type="search"
+          placeholder="Search for a project" autocomplete="off"
+          bind:value={s.q} />
+        <select id="sort" class="sort" aria-label="Project Sort" bind:value={s.sort}>
           <option value="id-asc"># ascending</option>
           <option value="id-desc"># descending</option>
           <option value="title-asc">Title A→Z</option>
@@ -133,19 +116,15 @@
   </header>
 
   <main class="container">
-    {#if loading}
-      <p class="loading-msg">Loading projects...</p>
-    {:else if error}
-      <p>Unable to load projects.</p>
+    {#if s.error}
+      <p style="color:#fff;padding:2rem 0">Unable to load projects.</p>
     {:else}
       <section class="grid" aria-live="polite">
-        {#each filtered as p (p.id)}
+        {#each s.filtered as p (p.id)}
           {@const done = p.status?.toLowerCase().includes('finished')}
           <article class="card">
             <div class="card__media">
-              {#if p.image}
-                <img src={p.image} alt={p.title} loading="lazy" />
-              {/if}
+              {#if p.image}<img src={p.image} alt={p.title} loading="lazy" />{/if}
             </div>
             <div class="card__body">
               <h3 class="card__title">{p.id}. {p.title}</h3>
@@ -167,12 +146,12 @@
                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
                   </a>
                 {:else if p.video}
-                  <button class="icon-btn" onclick={() => openVideo(p.video, p.title)} aria-label="Watch video">
+                  <button class="icon-btn" onclick={() => s.openVideo(p.video, p.title)} aria-label="Watch video">
                     <i class="fa-solid fa-play"></i>
                   </button>
                 {/if}
                 {#if p.links?.github}
-                  <a class="icon-btn" href={p.links.github} target="_blank" rel="noopener" aria-label="View on GitHub">
+                  <a class="icon-btn" href={p.links.github} target="_blank" rel="noopener" aria-label="GitHub">
                     <i class="fa-brands fa-github"></i>
                   </a>
                 {/if}
@@ -184,15 +163,17 @@
     {/if}
   </main>
 
-  <dialog bind:this={dialogEl} class="modal" aria-label="Video demo"
-    onclick={(e) => {
-      const rect = dialogEl.getBoundingClientRect();
-      if (e.clientX < rect.left || e.clientX > rect.right ||
-          e.clientY < rect.top  || e.clientY > rect.bottom) closeVideo();
+  <dialog bind:this={s.dialogEl} class="modal"
+    onclick={e => {
+      const r = s.dialogEl.getBoundingClientRect();
+      if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom)
+        s.closeVideo();
     }}>
-    <button class="modal-close" onclick={closeVideo} aria-label="Close">
+    <button class="modal-close" onclick={s.closeVideo} aria-label="Close">
       <i class="fa-solid fa-xmark"></i>
     </button>
-    <h2 class="modal-title">{modalVideoTitle}</h2>
+    <h2 class="modal-title">{s.modalVideoTitle}</h2>
+    <video bind:this={s.videoEl} src={s.modalVideoSrc} controls playsinline preload="metadata"></video>
   </dialog>
 </div>
+
