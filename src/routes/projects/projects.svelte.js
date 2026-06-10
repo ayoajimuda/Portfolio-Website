@@ -64,8 +64,13 @@ export function createStore() {
       console.error(e);
       error = true;
     } finally {
-      requestAnimationFrame(() => requestAnimationFrame(() => ready = true));
-    }
+        try {
+          await document.fonts.load('normal 1rem "DepartureMono"');
+        } catch (e) {
+          // font failed to load, show page anyway
+        }
+  requestAnimationFrame(() => requestAnimationFrame(() => ready = true));
+}
   });
 
   return {
