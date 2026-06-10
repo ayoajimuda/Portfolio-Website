@@ -7,7 +7,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: 'Space Mono', monospace;
+  font-family: var(--font-space);
 }
 
 /* ---------- Heading ---------- */
@@ -129,13 +129,13 @@
 }
 
 .exp-card-desc {
-  font-family: var(--font-mono)
-  font-size: 0.82rem;
+  font-family: var(--font-space);
+  font-size: 0.92rem;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.72);
   line-height: 1.75;
   text-align: left;
-  max-width: 600px;
+  max-width: 800px;
 }
 
 

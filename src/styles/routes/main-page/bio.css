@@ -19,8 +19,9 @@
 }
 
 .hero-wrap .hero-subtitle {
-  font-size: 14px;
-  color: #888;
+  font-family: var(--fontMono);
+  font-size: 17px;
+  color: #ffffff;
   margin-bottom: 14px;
   line-height: 1.8;
   letter-spacing: 0.1em;
@@ -45,7 +46,8 @@
 
 .hero-wrap .hero-description {
   font-size: 18px;
-  font-weight: 200;
+  font-weight: 400;
+  font-family: var(--fontMono);
 }
 
 .hero-wrap .hero-actions {
@@ -61,7 +63,7 @@
   background: transparent;
   padding: 12px 28px;
   font-family: "Space Mono", monospace;
-  font-size: 15px;           /* fixed typo: was "125x" */
+  font-size: 15px;
   font-weight: 700;
   border-radius: 24px;
   cursor: pointer;
@@ -76,18 +78,18 @@
 
 .hero-wrap .hero-actions .social-links {
   display: flex;
-  gap: 20px;
+  gap: 70px;
 }
 
 .hero-wrap .hero-actions .hero-social-icon {
   width: 52px;
   height: 52px;
   border-radius: 50%;
-  border: 1.75px solid #2a2d3e;
+  border: 1.75px solid #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #aaa;               /* icon colour when not hovered */
+  color: #ffffff;               
   font-size: 20px;
   cursor: pointer;
   transition: border-color 0.2s, color 0.2s;
