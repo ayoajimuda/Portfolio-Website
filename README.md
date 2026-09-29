@@ -1,42 +1,50 @@
-# sv
+<img src="https://github.com/AnderMendoza/AnderMendoza/raw/main/assets/line-neon.gif" width="100%">
+<h1><b>Hi there, I'm </b><a href="https://github.com/ALX-13">Redona</a> <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="30"></h1>
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+<br>
+Fullstack dev, System Architect, DevOps 
+<p><small><i>- Industrial confusion & inconvenience engineering<br>
+- Force push and pray Σ(っ °Д °;)っ</i></small></p>
+<h2>
+  <img src="https://github.com/7oSkaaa/7oSkaaa/blob/main/Images/about_me.gif?raw=true" width="35"/>
+  &nbsp;About Me
+</h2>
 
-## Creating a project
+<img align="right" width=200px alt="Radnaa" src="./rick-roll-rick-astley.gif"/>
 
-If you're seeing this, you've probably already done this step. Congrats!
 
-```sh
-# create a new project
-npx sv create my-app
-```
+- 📚 I’m currently learning ...
+  - *AWS Developer Associate*, *Japanese N2 level*, *Certified Kubernetes Administrator*
+- 🚀 I’m eager to join new projects.
+- ✔ Feel free to ask me anything! I’m motivated to help others.
+- Outside tech, I enjoy socializing with friends, 📚 reading webnovels, 🎵 listening to music, and I also love 🎸 playing musical instruments.
+- 📫 Reach out to me at: <a href="radnaa2015@gmail.com">radnaa2015@gmail.com</a>
+- 👨‍💻 Check out my portfolio at [radnaabazar.com](https://radnaabazar.com)
+<div align="center">
+  <a href="https://www.instagram.com/radnaa.xd"><img src="https://img.shields.io/badge/Instagram-%2312100E.svg?&style=for-the-badge&logo=instagram&logoColor=white&color=black" /></a>
+</div>
 
-To recreate this project with the same configuration:
+<br>
 
-```sh
-# recreate this project
-npx sv@0.15.3 create --template minimal --no-types --install npm my-portfolio-website
-```
+<img src="https://media2.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif?cid=ecf05e47a0n3gi1bfqntqmob8g9aid1oyj2wr3ds3mg700bl&rid=giphy.gif" width ="30">&nbsp; ***Skills***
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
+#### Languages & Frameworks
+<img src="https://skillicons.dev/icons?i=ts,js,c,cpp,cs,go,java,react,next,nodejs,express,dotnet,prisma,tailwind&perline=15" />
 
-## Developing
+#### Tools & Infrastructure
+<img src="https://skillicons.dev/icons?i=docker,kubernetes,aws,vercel,redhat,nginx,postgres,mongodb,mysql,postman,figma,latex,ps,pr&perline=15" />
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+</br>
 
-```sh
-npm run dev
+<img src="https://media.giphy.com/media/iY8CRBdQXODJSCERIr/giphy.gif" width="35">&nbsp;***Github Stats***
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
+<br>
 
-## Building
+![GitHub Stats](https://github-readme-stats-fast.vercel.app/api/streak?username=RedonaNova&theme=radical)
+![GitHub Stats](https://github-readme-stats-fast.vercel.app/api/top-langs/?username=RedonaNova&layout=compact&theme=radical)
+<div align="center">
+  <img src="https://komarev.com/ghpvc/?username=RedonaNova&label=Profile%20views&color=0e75b6&style=flat" alt="profile views" />
+</div>
 
-To create a production version of your app:
-
-```sh
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+<!-- Proudly created with GPRM ( https://gprm.itsvg.in ) -->
